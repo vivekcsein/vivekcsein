@@ -14,13 +14,14 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "emmet.includeLanguages": {
-         "javascript": "javascriptreact",
-         "typescript": "typescriptreact"
+        "javascript": "javascriptreact",
+        "typescript": "typescriptreact"
     },
     "settingsSync.ignoredSettings": [
 
     ],
     "settingsSync.ignoredExtensions": [
-        
-    ]
+
+    ],
+    "workbench.colorTheme": "One Dark Pro"
 }
