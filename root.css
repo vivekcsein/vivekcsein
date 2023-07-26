@@ -1,1 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Poppins:wght@500&display=swap');
 
+:root {
+
+    /* color: 60%;; */
+    --base_color1: #010100;
+    /* color: 30%;; */
+    --base_color2: #d1903b;
+    /* color: 10%;; */
+    --base_color3: rgba(122, 133, 255, .7);
+    /* color: 0%;; */
+    --base_color4: rgb(223, 138, 59);
+    --base_color_text: #ebde90;
+    --base_color_text_hover: #cf0c0c;
+    --base_gradient_color1: #000000;
+    --base_gradient_color2: #000000;
+    --alt_base_color1: #c4c4f6;
+    --alt_base_color2: #4827db;
+    --alt_base_color3: #df8a3b;
+    --white: #f4eee0;
+    --blue: #4e4ee3;
+    --pink: #b4238e;
+    --bg_color0: rgba(122, 133, 255, .7);
+    --bg_color1: #ffd000;
+    --bg_color2: #0026ff;
+    --bg_color3: #ff00ff;
+    --bg_color4: #00eeff;
+    --font_1: "Catamaran";
+    --font_2: "Poppins";
+    --font_3: "Verdana";
+    --font_4: "sans-serif";
+    --font_byDefault_size: 2rem;
+    --font_onHover_size: 2.6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: var(--font_1), var(--font_2), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--base_color_text);
+    text-decoration: none;
+    list-style: none;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: linear-gradient(var(--base_gradient_color2), var(--base_gradient_color1)); */
+    /* background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%); */
+    background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%);
+
+    background: #2196f3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f44336, #2196f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f44336, #2196f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 50%);
+
+}
+
+h1 {
+    font-family: var(--font_3);
+}
+
+p {
+    font-family: var(--font_4);
+}
