@@ -22,7 +22,7 @@
     "settingsSync.ignoredExtensions": [
         
     ],
-    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Consolas ligaturized v2, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.linkedEditing": true,
     "editor.formatOnSave": true,
