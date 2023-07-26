@@ -1,1 +1,26 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "emmet.includeLanguages": {
+         "javascript": "javascriptreact",
+         "typescript": "typescriptreact"
+    },
+    "settingsSync.ignoredSettings": [
 
+    ],
+    "settingsSync.ignoredExtensions": [
+        
+    ]
+}
