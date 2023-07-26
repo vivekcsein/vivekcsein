@@ -23,5 +23,7 @@
     "settingsSync.ignoredExtensions": [
 
     ],
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.linkedEditing": true,
+    "editor.fontLigatures": true
 }
