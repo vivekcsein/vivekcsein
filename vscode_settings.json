@@ -1,5 +1,4 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
@@ -18,12 +17,19 @@
         "typescript": "typescriptreact"
     },
     "settingsSync.ignoredSettings": [
-
+        
     ],
     "settingsSync.ignoredExtensions": [
-
+        
     ],
-    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.linkedEditing": true,
-    "editor.fontLigatures": true
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "window.zoomLevel": 1,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
 }
