@@ -45,7 +45,7 @@
   color: var(--base_color_text);
   text-decoration: none;
   list-style: none;
-  font-size: 62.5%;
+/*   font-size: 62.5%; */
 }
 
 body {
