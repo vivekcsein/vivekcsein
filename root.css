@@ -1,75 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400&family=Open+Sans:wght@300;400&family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&family=Work+Sans:ital,wght@0,300;1,400&display=swap');
 
 :root {
 
-  /* color: 60%;; */
-  --base_color1: #010100;
-  /* color: 30%;; */
-  --base_color2: #d1903b;
-  /* color: 10%;; */
-  --base_color3: rgba(122, 133, 255, .7);
-  /* color: 0%;; */
-  --base_color4: rgb(223, 138, 59);
+    /* color: 60%;; */
+    --primary_color1: #010100;
+    /* color: 30%;; */
+    --primary_color2: #d1903b;
+    /* color: 10%;; */
+    --primary_color3: rgba(122, 133, 255, .7);
+    /* color: 1%;; */
+    --primary_color4: rgb(127, 223, 59);
 
-  --base_color_text: #ebde90;
-  --base_color_text_hover: #cf0c0c;
+    --text_color_default: #e5bb23;
+    --text_color_onhover: #e86c0d;
+    --text_color_highlighted: #ff6f00;
+    --button_color: #ffffff;
+    --button_color_onHover: #e43535;
 
-  --base_gradient_color1: #000000;
-  --base_gradient_color2: #000000;
+    --primary_gradient_color1: #E2B0FF;
+    --primary_gradient_color2: #9F44D3;
 
-  --alt_base_color1: #c4c4f6;
-  --alt_base_color2: #4827db;
-  --alt_base_color3: #df8a3b;
-  --white: #f4eee0;
-  --blue: #4e4ee3;
-  --pink: #b4238e;
-  --bg_color0: rgba(122, 133, 255, .7);
-  --bg_color1: #ffd000;
-  --bg_color2: #0026ff;
-  --bg_color3: #ff00ff;
-  --bg_color4: #00eeff;
-  --font_1: "Catamaran";
-  --font_2: "Poppins";
-  --font_3: "Verdana";
-  --font_4: "sans-serif";
-  --font_default_size: 2rem;
-  --font_onHover_size: 2.6rem;
+    --primary_alt_color1: #c4c4f6;
+    --primary_alt_color2: #4827db;
+    --primary_alt_color3: #df8a3b;
+
+    color-scheme: light dark;
+    --dark_mode: #1a1a1a;
+    --light_mode: #cccccc;
+    --night_mode: #213547;
+
+    --black: #000000;
+    --white: #ffffff;
+    --blue_fav: #4e4ee3;
+    --pink_fav: #b4238e;
+    --purple_fav: #ff9ff3;
+    --color0: #69e9f5;
+    --color1: #ffd000;
+    --color2: #dc6249;
+    --color3: #BD4EC4;
+    --color4: #5f27cd;
+
+    /* font cofig */
+    --font_1: "Poppins";
+    --font_2: "Roboto";
+    --font_3: "Catamaran";
+    --font_4: "Verdana";
+    --font_5: "Open Sans";
+    --font_6: "Work Sans";
+    --font_7: "sans-serif";
+    --font_default_size: 1.2rem;
+    --font_onHover_size: 1.5rem;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  font-family: var(--font_1), var(--font_2), "Segoe UI", Geneva, Tahoma, Verdana, sans-serif;
-  color: var(--base_color_text);
-  text-decoration: none;
-  list-style: none;
-/*   font-size: 62.5%; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: var(--font_1), var(--font_2), var(--font_3), var(--font_4), var(--font_5), var(--font_6), var(--font_7) "Segoe UI", Geneva, Tahoma, sans-serif;
+    color: var(--text_color_default);
+    text-decoration: none;
+    list-style: none;
+    /*   font-size: 62.5%; */
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  /* background: #2196f3; */
-  background-image: linear-gradient(var(--base_gradient_color2), var(--base_gradient_color1));
-  /* background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%); */
-  /* background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%); */
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(var(--base_gradient_color2), var(--base_gradient_color1));
+    /* background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%); */
+    /* background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%); */
 
-  /* fallback for old browsers */
-  /* background: -webkit-linear-gradient(to right, #f44336, #2196f3); */
-  /* Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(to right, #f44336, #2196f3); */
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, var(--base_gradient_color1), var(--base_gradient_color2));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, var(--base_gradient_color1), var(--base_gradient_color2));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(135deg, var(--base_gradient_color1) 10%, var(--base_gradient_color2) 50%);
 
-  /* background-image: linear-gradient(135deg, #E2B0FF 10%, #9F44D3 50%); */
-
+    background: var(--dark_mode);
 }
 
 h1 {
-  font-family: var(--font_3);
+    font-family: var(--font_3);
+    font-size: 3rem;
+    color: #4827db
+}
+
+h2 {
+    font-family: var(--font_2);
 }
 
 p {
-  font-family: var(--font_4);
+    font-family: var(--font_4);
+    font-weight: lighter;
+}
+
+a {
+    font-family: var(--font_4);
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #213547;
+        color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        color: #f9f9f9;
+    }
 }
