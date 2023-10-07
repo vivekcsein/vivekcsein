@@ -1,0 +1,7 @@
+cd C:\Users\vivek\AppData\Local\Programs\Python\Python37-32
+
+cd Scripts
+
+pip install pymysql
+
+pip install pymongo

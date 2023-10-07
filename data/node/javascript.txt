@@ -1,0 +1,187 @@
+const log = (val) => console.log(val)
+
+Javascript ?
+JavaScript is a lightweight,high level & interpreted programming language (just-in-time line by line compiltion). 
+It allows you to build interactivity into otherwise static HTML pages.
+Javscript is case-sensitive language.
+It has curly -brakcets syntax, dynamic typing, prototype-based object-oriented capabilities & first class functions.
+
+HTML ?
+Html stands for hypertext markup language and it is used for creating webpages.
+HTML is structure or series of elements & each element tells the browser to display the content.
+
+JS operator precedence
+an operator is a special symbol used to perform operations on operands
+When many operations have the same precedence (like addition and subtraction or multiplication and division), they are computed from left to right
+
+Before ES6 Global Scope and Function Scope
+
+ES6 ?
+Supports constants/immutable variables.
+Block scope support for all variables, constants and functions.
+arrow functions
+Handling extended parameter
+Default parameters
+Extended and template literals
+De-structuring assignment
+Promises
+Classes
+Modules
+Collections
+Supports Map/Set & Weak-map/Weak-Set
+Localization, meta-programming, internationalization
+
+var let const ? 
+user can declare varibale using these 3 keywords.
+Var is a function scoped where both let and const have block scope.
+var once declared can be re-declared with same name and its value can be re-assign.
+let once declared can not be redecalred again with same name and its value can be re-assign.
+const have to declared & it must assign a value at the time of declration & it cannot be re-assign.
+let & const hosited in temperal dead zone before it get initilized.
+var is assigned with undefined value when hoisted.
+
+let ?
+Variables defined with let cannot be Redeclared.
+Variables defined with let must be Declared before use.
+Variables defined with let have Block Scope.
+Variables defined with let are also hoisted to the top of the block, but not initialized.
+Meaning: Using a let variable before it is declared will result in a ReferenceError
+
+const ?
+Variables defined with const cannot be Redeclared.
+Variables defined with const cannot be Reassigned.
+Variables defined with const have Block Scope.
+
+primitive & non-primitive data types ?
+null,undefined,number,boolean,string,symbol are 6 type of primitive data type.
+object, date & array are the non-primitive data type.
+primitive data type hold the value of the data types & have memory.
+non-primitive data type just refer/point to the memory of the block.
+
+closures?
+JavaScript variables can belong to the local or global scope.
+Global variables can be made local (private) with closures.
+A function can access all variables defined inside the function
+
+functions ?
+JavaScript functions are defined with the function keyword.
+normal functions are always hosted but anonymous & arrow function dont.
+arguments are the values received by the function when it is invoked
+Inside the function, the arguments (the parameters) behave as local variables
+
+Anonymous Function ?
+When we create a function withour name/idenitfier associated with it.
+If any function is only used once, or a limited number of times,
+an anonymous function may be syntactically lighter than using a named function.
+
+Arrow function ?
+In ES6 which we don't require the function keyword in order to define the function. 
+The context within the arrow functions is lexically or statically scoped.
+Arrow functions do not include any prototype property, and cannot be used with the new keyword.
+Arrow functions do not have their own this. They are not well suited for defining object methods.
+Arrow functions are not hoisted. They must be defined before they are used.
+
+Callback function ?
+A callback is a function passed to some method as argument to another function.
+callback function runs after another function has finished hence name is callback function.
+
+
+First class function or first class citizens ?
+function used as value is known as first class function either passed as a value pr retuned as a value.
+let fun =(function(){})=>{}
+let fun =()=>{return ()=>{}}
+
+Higher Order Functions ?
+A function which takes function as a argument or return a function is known as higher order function.
+
+Hoisting ?
+In hoisting, the JS engine works behind the scenes to move the variable and function declarations to the top.
+or
+Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope
+Hoisting applies to variable declarations and to function declarations.
+Because of this, JavaScript functions can be called before they are declared
+
+Modules ?
+JavaScript modules allow you to break up your code into separate files to make easier to maintain code-base
+
+Higher order functions ?
+A higher-order function is a function that either returns a function or takes in a function as an argument.
+commonly used to "abstract" how to operate on different data types.
+ex forEach, map, filter
+
+promises ?
+"Producing code" is code that can take some time.
+"Consuming code" is code that must wait for the result
+A javascript promise object can be Pending, Fullfilled, Rejected.
+
+let myPromise = new Promise(function(myResolve myReject){
+myResolve();  myReject();
+});
+
+classes ?
+Classes are a template for creating objects. They encapsulate data with code to work on that data
+To create a class inheritance, use the extends keyword.
+
+callbacks?
+A callback is a function passed as an argument to another function
+callbacks technique allows a function to call another function
+A callback function can run after another function has finished
+
+Promise Vs callbacks ?
+
+
+Asynchronous?
+Functions running in parallel with other functions are called asynchronous
+async and await make promises easier to write
+async makes a function return a Promise
+await makes a function wait for a Promise
+
+Window Object ?
+Window is the main container or we can say the global object and any operation related to entire browser window can be a part of window object.
+
+BOM?
+Bom is browser object model, which deals with browser components, history, location, navigator & screen.
+
+DOM?
+When a web page is loaded, the browser creates a Document Object Model of the page
+Dom is a child of window object which deals with the documents, HTMl elements
+
+virtual DOM ?
+Its representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM
+It is faster than real DOM.
+
+Destructuring ?
+Destructuring makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+Events ?
+an HTML event are things that happen to html elements
+Javascript lets you execute code when event are detected.
+An HTml web page has finished loading. an HTMl input was changed.
+For ex onClick event, mouse event, key press;
+1: using alert();
+2: by calling function(HTML onclock = "")
+3: by Inline events(HTML onclock = "")
+4: Event Listener (addEventListener)
+
+this ?
+In JavaScript, the this keyword refers to an object depending on how it used/ invoked
+In a object it refers to that object.
+Alone it refers to global/window object.
+In a function refers to global object.
+In a function in strict mode, this is undefined.
+
+call? apply? bind?
+call method is used to write a method that can be used on different objects.
+apply method is simillar to call method. It just takes arguments as an array.
+bind method return a method by borrowing it from another object so that it can invoke later.
+
+
+Variable Lifetime?
+Global variables live until the page is discarded.
+Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
+
+sorting array ?
+
+
+
+

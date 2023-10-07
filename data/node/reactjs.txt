@@ -1,0 +1,45 @@
+Why react?
+In present, React is the ultimate JavaScript library for better front-end development.
+It is the only powerful framework that runs in the browser and allows you to build highly responsive web applications.
+You do not need to rewrite the whole code every time you create a feature or an app
+
+What is react?
+React developers create interactive UI by building reusable components that can be used to send and receive data from a backend serve
+
+Why react is best?
+React is best known for building amazing single-page applications that effectively update the DOM without sending a request to the web server
+
+About ReactJS
+Though some believe ReactJS to be the replica of front-end development frameworks, in reality,
+it is the library of user interfaces leading to the creation of eye-catching and feature-rich applications.
+
+DOM Manipulation and event handlers: Always attach your events to the HTML elements. And DOM manipulation has become very rare nowadays. Still, we have the JSX.
+
+Presence of virtual DOM enhances the performance of complicated apps as modifications can be done without actually affecting the other components in the hierarchy
+
+The “this” keyword: Frequently used in Javascript. But never overuse or misuse it.
+
+Variables & Scoping: A common trend of storing variables is to use the ‘var’ keyword, right?
+With ES6, a developer can take a step forward and choose from a range of keywords such as `let` and `const.`
+This creates an impression that developers can avoid using var when not needed.
+
+Array Methods: Storing and accessing data is a tough nut to crack.
+Even if you have had the ease to store data in arrays, retrieving and manipulating them is a bit difficult.
+Thanks to the bundle of tools offered by JavaScript as `.map`, `.filter` and `.reduce` to play with array methods.
+
+Babel is a compiler which can transform all your HTML like syntaxes into the standard javascript files. Its always updated with the features of the latest version of javascript
+
+Sentry for real-time monitoring and fix crashes
+Bitrise – Increased automation
+Hockeyapp – Crash reporting, managing testers, beta distribution
+Redux – Manage the application state
+ESLint – To validate the code in compliance with JavaScript patterns
+Jest – Ready-to-use tool for testing JS code
+Enzyme – Facilitate the testing of React apps
+
+Why redux ?
+Redux is an application data-flow architecture.
+Redux is implemented to manage the state of the data.
+The data in the react always flows from parent to child components which makes it Uni-Directional.
+
+redux h

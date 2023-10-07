@@ -1,0 +1,41 @@
+
+Rigid Body ?
+A rigid body is an idealization of a body that does not deform or change shape.
+Rigid body has physics properties like mass, friction , damping,
+
+static, which means a static rigid body, like a stone with a huge mass, specifically a mass with a mass of 0, or only physical elements with collision components.
+dynamic, which means that a dynamic rigid body can be subjected to forces, specifically those with a mass greater than 0 and isKinematic being false.
+kinematic, which means kinematic rigid body, the user controls the movement of the rigid body, specifically the mass is greater than 0 and isKinematic is true
+
+prefab ?
+
+prefab is a description file for the object
+It stores the game object and its component properties in assets folder.
+It directly allows to Instantiate in the scene.
+
+awake vs start ?
+
+Awake is called when the script is first loaded, or when an object it is attached to is instantiated.
+It only gets called once on each script, and only after other objects are initialised
+
+Start only gets called on a script if the component is enabled
+Start is called once, before any Update methods and after Awake. It works in much the same way as Awake, with a few key differences.
+Unlike Awake, Start will not be called if the script is disabled
+Start can be called as a coroutine
+This means that code that is placed in Start can be delayed
+
+onEnabled ?
+While Start will only ever be called once, On Enable is called every time the script component, or the object it’s attached to, is enabled.
+
+raycasting ?
+Ray Casting is the graphic technique of using 2D data to display what would look like a 3D environment.
+
+determines the visibility of surfaces by tracing imaginary rays of light from viewer’s eye to the object in the scene
+
+Raycasting is the process of shooting an invisible ray from a point, in a specified direction to detect whether any colliders lay in the path of the ray.”
+This is useful with side scrolling shooters, FPS, third person shooters, bullet hell,and even adventure games.
+Being able to trace where a bullet or laser is going to travel from start to finish means that we know exactly how it should behave. We can physically watch it and manipulate it in the game world.
+
+
+
+

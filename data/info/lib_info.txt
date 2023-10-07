@@ -1,0 +1,1 @@
+Kivy that is an open source Python library used for developing mobile apps

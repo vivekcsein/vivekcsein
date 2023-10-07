@@ -1,0 +1,57 @@
+VS-Code Tricks
+
+
+font ligatures on {like arrow function}
+font family :  Consolas ligaturized v2
+copy in json file in vscode 
+
+"emmet.includeLanguages": {"javascript": "javascriptreact"},
+"terminal.integrated.defaultProfile.windows": "Command Prompt",
+"editor.fontFamily": "Consolas ligaturized v2, Consolas, 'Courier New', monospace",
+"editor.fontLigatures": true,
+
+One dark Pro : main theme 
+
+Live server : for live server html in chrome
+
+auto rename tag : for complete auto rename 
+
+code runner : for run basic programs of java, c , python & javascript & many more languages.
+
+ES7 React/redux/graphQl : for reactJS Snippets
+
+//Paid so i don't use
+Github co-Poilot : AI based github 
+//free for everyone
+BlackBox AI Based Github Code Producer.
+
+javascript(ES6) code snippets : for javascript.
+
+Material Icon Theme : for generating icon & images in icons
+
+Power mode  : for using 2d animations in code
+
+Spark Ar Studio : for spark ar studio
+
+Visual Studio intellicode : for intellsense in vscode
+
+Awesome flutter Snippets  : for flutter snipets
+
+Bracket pair colorizer2 : for opening & closing brackets
+
+rainbow brackets : for parenthesis
+
+code pretiier  : for aligning code & autorename  {in setting : format on save }
+
+rest Client : postman backend testing purpose
+
+tailwind css intellisense : for tailwind css
+
+code snap : for taking screenshot in code for coding.
+
+Live Share : for  sharing
+
+intellisense css : for bootstraps
+
+
+

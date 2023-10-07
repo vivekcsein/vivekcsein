@@ -1,0 +1,9 @@
+what is flutter?
+
+A "tool" that allows you to build native cross-platform(ios,Android) apps with one programming language and codebase.
+The term fluuter refers to two major things :
+1. SDK (software development kit)
+2. A Framework/ Widget Library
+
+Flutter uses programing language as name Dart.
+Dart is focused on buildings front-end user ibterfaces, front-end apps.

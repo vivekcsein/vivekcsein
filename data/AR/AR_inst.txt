@@ -1,0 +1,17 @@
+// instructions for the Unboxing Mobile 
+
+Tap to place the box to begin unboxing
+
+Pick an item to explore
+
+Pinch/Rotate to explore the product
+
+Tap on the screen to explore the feature
+
+Tap to start
+
+Tap to place box
+
+Tap to unbox
+
+Tap on product to explore

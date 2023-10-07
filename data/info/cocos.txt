@@ -1,0 +1,9 @@
+Cocos Creator 3D uses babel instead of tsc to compile TypeScript scripts. In particular, the @babel/plugin-transform-typescript plugin is used.
+
+tsconfig.json will not be read.
+Implied with isolatedModules option, which means:
+Const enums is not supported.
+TypeScript types and interfaces should not be exported in the export declaration.
+Export = and import = are not supported.
+Variables exported by namespace must be declared as const instead of var or let.
+Different declarations in the same namespace will not share the scope and require explicit use of qualifiers.

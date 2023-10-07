@@ -1,0 +1,12 @@
+Blender specially
+
+shorcuts
+Interface Mode
+Visual analysis
+Stimulation:
+
+
+scope of work in 3d graphics
+VFX, skinning, bone movement, lighting, color corrections and balancing, effects, rigging and rendering, Game concepts & motion graphics.
+
+VFX effects like Destruction, noise, smoke, cloudy & fire

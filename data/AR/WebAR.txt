@@ -1,0 +1,105 @@
+
+platfrom to build webAR 
+
+1. 8th Wall
+2. Banuba Face AR 
+3. XR.+
+4. Zappar Studio
+5. AWE
+6. Blippar
+7. Gravity Jack
+8. EasyAR
+9. ViewAR
+10. WorldCast
+11. Geenee AR
+12. Augmania
+13. Onirix
+14. PlugXR
+15. ARGO
+16. HoloLink
+17. UniteAR
+18. ThreeKit
+19. Poplar studio
+20. Vectory
+21. unifiedar
+22. TheRoar
+
+Site to build WebAR Experience
+01. https://8thwall.com
+02. https://www.banuba.com/
+03. https://xr.plus
+04. https://zappar.com
+05. https://awe.media
+06. https://blippar.com
+07. https://gravityjack.com
+08. https://www.easyar.com/webar.html
+09. https://viewar.com
+10. https://worldcast.io
+11. https://geenee.ar
+12. https://augmania.com
+13. https://www.onirix.com
+14. https://www.plugxr.com
+15. https://ar-go.co/products/webar
+16. https://hololink.io
+17. https://www.unitear.com/WebAR
+18. https://threekit.com
+19. https://poplar.studio
+20. https://www.vectary.com/webar
+21. https://www.unifiedar.com/features/webar
+22. https://www.theroar.io
+
+
+AI ML based sources
+1. https://www.ovr.ai
+
+
+WebAR browsers by market share
+1. Chrome (mobile, desktop)
+2. Safari (mobile, desktop)
+3. Microsoft Edge (desktop, mobile)
+4. Mozilla Firefox (desktop, mobile)
+5. Samsung Internet (mobile)
+6. Servo (desktop)
+
+WebAR framework & Library
+1. AR.js
+2. ARToolkit library
+3. Argon.js
+4. awe.js
+5. three.js
+6. X3DOM
+
+
+MobileAR framework & library
+1. ARcore for Android
+2. ARKit for ios
+
+Devices which support webar
+1. Desktop
+2. Mobile Devices
+3. Mircrosoft Hololens
+4. magic leap
+
+
+Tracking Types Available in WEBAR
+1. Face Tracking
+2. Surface Tracking
+3. Object Tracking
+4. Image Tracking/Target Tracking
+5. Multi Target Tracking
+6. Location based AR Tracking
+
+Tools for AR
+8th Wall
+ARCore
+ARKit
+Huawei AR Engine
+Niantic Lightship
+Spark AR Studio
+TikTok Effect House
+Unreal
+Unity
+Vuforia
+Wikitude
+
+

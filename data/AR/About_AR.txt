@@ -1,0 +1,84 @@
+AR Filters tags: Bethe, games,
+
+https://lenslist.co/
+https://www.lenzgig.com/blogs/types-of-ar-filters-2021
+Prominent tech companies in this space, like Frenzz Studio and AliveNow,
+charge anywhere between $2,000 to $20,000 per project.
+
+AR Filters Categories :
+	1 : World Ar Filters
+	2 : Interactive Ar Filters
+	3 : AR Game Filters
+	4 : Marker based AR Filters
+	5 : Segmenatation based AR Filter
+
+
+World AR Filters : World ar filters works in real world environent.
+	Landmark based AR filters For Snapchat
+	Portal AR filters
+	Physics Based Real Word Filters for snapchat
+	Showcase/Unboxing Experience
+
+Interactive Ar Filters : User have to intract
+	Face AR Filters
+	Gesture Based Filters
+	Freeze Frame
+	Hand Tracking
+	Body Tracking 
+	Virtual Try ON for snapchat
+	Foot tracking For Snapchat
+	Text to speech for snapchat
+	Custom hand gesture for snapchat
+	
+AR Games Filters : gamification through script
+	Prediction or Random Selector Filter
+	Quiz AR game
+	Catching Falling game
+	Racing game
+	Shooting Games
+	Flappy Bird game
+	Flip Bottle game
+	Football Header game
+	Heart Matching Game
+	
+Marker based AR Filters : User scan the image & intractive things automatically came inside the filter.
+	
+
+Segmenatation based AR Filter
+	Background Person Segmentation Filters
+	Hair Segmentation
+	Floor Segmentation for snapchat
+	Sky Segmentation for snapchat
+	
+
+Gestures we can use in spark AR Studio
+	Touch Gestures :-, Tap, Pan, Pinch, Rotate, Long Press
+	Face gestures :-  Open Mouth, Blink, Left Tilt, Right Tilt, Kiss, Happy, leaned, Smile, onNode, onShake.
+	Device gestures :- 	
+
+Gestures We can use in snap lens studio		
+	Touch Gestures :-, Tap, Pan, Pinch, Rotate, Long Press
+	Face gestures :-  Open Mouth, EyeBrowRaise/eyebrowDown, Left Tilt, Right Tilt, Kiss, Happy, leaned, Smile, onNode, onShake.
+	Device gestures :- GyroScope, Lidar Sensor.
+
+We have Projects
+
+1: World AR : placement object in 3d real world space
+  
+
+Interactive Ar Filters	
+
+
+AR Games
+	guess the flag
+	Guess the logo (Insta & Snap)
+
+
+Segmentation & Animation
+	
+
+Playable adds 
+	
+
+
+

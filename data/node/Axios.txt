@@ -1,0 +1,18 @@
+why use axios over fetch ?
+
+it use json data without parsing.
+it has many HTTP methods to acess any api.
+axios uses only single .then 
+axios provide better error handling
+
+installation
+
+npm i axios
+
+
+npm create vite@latest axiosapi -- --template react
+
+error during npm
+
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+

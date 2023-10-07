@@ -1,0 +1,39 @@
+react hook ?
+Hooks allow function components to have access to state and other React features without writing a class.
+
+state ?
+State generally refers to application data or properties that need to be tracked at current status.
+
+There are 3 rules for hooks:
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+why hooks?
+State Management in Functional Components: Before hooks, if you wanted to use state in a component, you had to convert it to a class component. Hooks enable functional components to manage state using the useState hook, which simplifies the code and makes it more readable.
+
+Code Reusability: Hooks allow you to extract and reuse stateful logic from components. Custom hooks enable you to share logic (e.g., data fetching, form handling) across multiple components without duplicating code.
+
+Simplifies Lifecycle Management: Hooks like useEffect allow you to manage side effects, such as data fetching, event listeners, or DOM manipulations, in a more declarative way compared to lifecycle methods in class components. They also help prevent memory leaks.
+
+Better Separation of Concerns: Hooks encourage a separation of concerns by allowing you to manage state and side effects independently within a functional component. This leads to cleaner and more maintainable code.
+
+Improved Testing: Functional components with hooks are easier to test because you can extract and test the logic encapsulated by hooks in isolation, making unit testing more straightforward.
+
+Migration to Functional Components: Hooks make it easier for developers to migrate existing class components to functional components, taking advantage of the benefits of both approaches.
+
+
+summary Hooks ?
+Hot eloading possible
+no need to use of 'this' keyword
+unidirectional data flow makes easy
+render patterns makes easy
+Allows you to reuse stateful logics
+complex components like data fetching and subscribing makes easy in componen life cycles
+organize the logic inside a component into reusable units
+
+
+
+
+
+

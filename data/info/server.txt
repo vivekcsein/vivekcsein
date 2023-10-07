@@ -1,0 +1,15 @@
+Port forwarding enables you to view content from your development machine's web server on your Android device
+
+//Stack Overflow of browsers
+When you exceed the maximum call stack size by introducing too much recursion, the browser will error out with one of the following messages:
+
+Internet Explorer: “Stack overflow at line x”
+
+Firefox: “Too much recursion”
+
+Safari: “Maximum call stack size exceeded”
+
+Opera: “Abort (control stack overflow)”
+
+Chrome is the only browser that doesn’t display a message to the user when the call stack size has been exceeded
+Actuallly chrome consumes all the ram of device which causes to hang.

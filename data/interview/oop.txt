@@ -1,0 +1,11 @@
+Classes ?
+
+Classes are a template for creating objects.
+They encapsulate data with code to work on that data.
+Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 class-like semantics.
+classes must be defined before they can be constructed.
+One way to define a class is using a class declaration.
+
+constructor ?
+
+The constructor method is a special method for creating and initializing an object created with a class.

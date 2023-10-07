@@ -1,0 +1,48 @@
+create a file using cmd
+type null> index.js
+
+//NODE
+//NODE
+
+//to check the version of nodejs
+node -v
+npm -v
+
+// npm init for creating dependency package.json
+npm init
+or
+npm init -y
+
+npm install express
+
+npm install nodemon -D
+
+npm install socket.io
+
+
+//install typescript globally
+npm install -g typescript
+npx -p typescript tsc --init
+tsc --watch
+
+// command to update tar 
+npm i tar
+
+//install yarn globally
+npm install -g yarn
+
+//install pnpm
+npm install -g pnpm
+
+//for emmets & commands in javascript
+ "emmet.includeLanguages": {"javascript": "javascriptreact"},
+
+npm install inquirer --save
+npm install yargs --save
+
+
+//vite commands
+npm create vite .
+or
+npm create vite . --template vanilla
+npm install

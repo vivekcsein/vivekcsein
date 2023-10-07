@@ -1,0 +1,59 @@
+
+
+
+There are two display values: block and inline
+A block-level element always starts on a new line and takes up the full width available
+An inline element does not start on a new line and it only takes up as much width as necessary
+The <div> element is a block-level and is often used as a container for other HTML elements
+The <span> element is an inline container used to mark up a part of a text, or a part of a document
+
+The <head> element is a container for metadata (data about data)
+The <head> element is placed between the <html> tag and the <body> tag
+The <title> element is required and it defines the title of the document
+The <style> element is used to define style information for a single document
+The <link> tag is most often used to link to external style sheets
+The <meta> element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings
+The <script> element is used to define client-side JavaScripts
+The <base> element specifies the base URL and/or target for all relative URLs in a page
+
+
+A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page
+
+An HTML iframe is used to display a web page within a web page
+
+what is javascript ?
+JavaScript makes HTML pages more dynamic and interactive.
+but after nodejs javascript can be used as server site language too.
+
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+document.getElementById("demo").style.backgroundColor = "yellow";
+document.getElementById("image").src = "picture.gif";
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+HTML Layout Techniques
+There are four different techniques to create multicolumn layouts. Each technique has its pros and cons:
+
+CSS framework
+CSS float property
+CSS flexbox
+CSS grid
+
+background: #ffffff url("img_tree.png") no-repeat right top;
+
+Margins are used to create space around elements, outside of any defined borders.
+Padding is used to create space around an element's content, inside of any defined borders.
+
+
+css box model ?
+
+Margin
+Outline
+Border
+Padding
+Content
+
+
+

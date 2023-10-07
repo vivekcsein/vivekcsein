@@ -1,0 +1,121 @@
+
+You may track up to 5 image targets with World Tracking enabled or up to 10 when it is disabled.
+
+src="https://8thwall.readyplayer.me/avatar"
+
+<div id="rpmContainer" class="container" style="z-index:999; display: block">
+  <iframe id="iframe" class="iframe-content" src="https://8thwall.readyplayer.me/avatar" allow="camera *; microphone *" ></iframe>
+</div>
+
+
+
+.pulse-once { animation: pulse-once 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860) both; }
+@keyframes pulse-once {
+  0% {transform: scale(1);}
+  50% {transform: scale(0.8);}
+  100% {transform: scale(1);}
+}
+
+const getWorldPosition = (object) => {
+  const position = new THREE.Vector3()
+  position.setFromMatrixPosition(object.matrixWorld)
+  return position
+}
+
+  <a-camera
+    id="camera"
+    position="0 4 4"
+    look-controls="enabled: false">
+       <a-plane 
+        id="faceEffectsBackground"
+        visible="false"
+        src="#background"
+        material="transparent: true"
+        position="0 0.1 -2" 
+        width="6" 
+        height="3" 
+       ></a-plane>
+  </a-camera>
+
+  <a-camera
+    position="0 4 10"
+    raycaster="objects: .cantap"
+    cursor="fuse: false; rayOrigin: mouse;">
+  </a-camera>
+
+  <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+
+  <a-light type="ambient" intensity="0.7"></a-light>
+
+
+    <a-entity xrextras-one-finger-rotate gltf-model="#jelly-glb"></a-entity>
+
+
+    dropBtn.addEventListener('click', (e) => {
+      // get all notes
+      const notes = Array.from(scene.querySelectorAll('.note'))
+      dropBtn.classList.add('pulse-once')
+      setTimeout(() => dropBtn.classList.remove('pulse-once'), 500)
+
+      // add gravity
+      notes.forEach((el) => {
+        if (!el.getAttribute('dynamic-body')) {
+          el.setAttribute('body', {type: 'dynamic', mass: 5, shape: 'none'})
+          el.setAttribute('shape__main', {shape: 'box', halfExtents: '1 1 0.15', offset: '0 0 0'})
+        }
+      })
+
+
+<a-scene
+  responsive-immersive
+  swap-camera
+  xrextras-gesture-detector
+  landing-page
+  xrextras-loading
+  xrextras-runtime-error
+  renderer="colorManagement:true">
+
+
+
+//adding recording & capturing 
+
+  <xrextras-capture-button></xrextras-capture-button>
+  <xrextras-cature-preview></xrextras-cature-preview>
+
+
+// asset loading
+
+  <a-assets>
+	//3d model
+    <a-asset-item id="jelly-glb" src="assets/jellyfish-model.glb"></a-asset-item>
+
+	// image load
+    <img id="jelly-thumb" src="assets/video-thumbnail.jpg">
+
+	// video load
+    <video
+      id="jelly-video"
+      autoplay
+      muted
+      crossorigin="anonymous"
+      loop="true"
+      src="assets/jellyfish-video.mp4">
+    </video>
+  </a-assets>
+
+
+//target
+  <xrextras-named-image-target name="video-target">
+    <a-entity 
+      xrextras-play-video="video: #jelly-video; thumb: #jelly-thumb; canstop: true"
+      geometry="primitive: plane; height: 1; width: 0.79;"
+    ></a-entity>
+  </xrextras-named-image-target>
+
+  <xrextras-named-image-target name="model-target">
+    <!-- Add a child entity that can be rotated independently of the image target. -->
+    <a-entity xrextras-one-finger-rotate gltf-model="#jelly-glb"></a-entity>
+  </xrextras-named-image-target>
+
+
+

@@ -1,0 +1,99 @@
+
+React Interview Crack :-
+
+Javascript ES6 concepts :-
+	Temporal Dead Zone, destructuring, call bind apply, forEach map filter reduce, Async await Promises,
+
+
+React fundamental concepts
+Redux/Flex
+JWT
+npm, webpack, babel, transpiler (convert code into es5)
+
+React ?
+React is a JavaScript library for building user interfaces created by Facebook.
+React is a tool for building UI components. React is used to build single-page applications.
+React allows us to create reusable UI components.
+
+React Work ?
+React creates a virtual DOM in memory instead of manipulating the DOM i browser's directly, where it does all the necessary manipulating, before making the changes in the browser DOM
+
+Virtual DOM ?
+Modern frameworks like react whenever something is changed in the state/props, a new virtual DOM representation will be created and it will be compared with the previous one
+
+React Render ?
+React renders HTML to the web page by using a function called ReactDOM.render()
+It takes two arguments one is HTML code & other is HTML element.
+The purpose of the function is to display the specified HTML code inside the specified HTML element.
+
+
+JSX ?
+JSX stands for JavaScript XML that makes it easier to write & add HTML in React.
+With curly braces you can write javascript in HTML element.
+
+Rules for JSX :
+It always return single element
+use Div or React Fragment to wrap all your JSX Code
+ClassName in place of class
+Need to close all non closing Tags in JSX
+Use camelCase for attributes
+
+React Fragment?
+A common pattern in React is for a component to return multiple elements.
+Fragments let you group a list of children without adding extra nodes to the DOM
+React.Fragment must have a key 
+
+Component ?
+Components are like functions that return HTML elements
+Components are independent and reusable bits of code
+Components are two types, Class components and Function components
+
+props ?
+Props are like function arguments, and you send them into the component as attributes
+
+Lifecycle of Components ?
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+The three phases are: Mounting, Updating, and Unmounting
+Mounting means putting elements into the DOM
+
+class component vs functional component ?
+
+import react, {Component} from "react"
+class App extends Component{
+render(){
+return {
+<jSX code>
+}
+}
+export default App;
+
+import react, from "react"
+function App(){
+return {
+<JSX>
+}
+}
+export default App;
+
+
+why Redux?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
