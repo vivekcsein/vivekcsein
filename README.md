@@ -1,6 +1,6 @@
   <h1>👋 &nbsp; Hey there! I'm VIVEK👋</h1> 
  <h2>👨🏻‍💻 &nbsp; About Me</h2> 
- <p>- 😄 Pronouns: He/him</p>
+ <p>😄 Pronouns: He/him</p>
 
  <p>MY HOME <code><a target="_blank" href = "https://vivekcse.in"><img height="40" src="https://img.icons8.com/dusk/64/000000/home--v1.png"></a></code> </p>
 
@@ -36,4 +36,6 @@
 <code><a href = "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"><img height="60" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></a></code>
 <code><a href = "https://developer.mozilla.org/en-US/docs/Archive/CSS3"><img height="60" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></a></code>
 <code><a target="_blank" href = "https://playvalorant.com/"><img height="40" src="https://img.icons8.com/color/96/valorant.png"></a></code>
+
+<code><svg width="100%" height="100%" viewBox="-10.5 -9.45 21 18.9" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-sm me-0 w-10 h-10 text-link dark:text-link-dark flex origin-center transition-all ease-in-out"><circle cx="0" cy="0" r="2" fill="currentColor"></circle><g stroke="currentColor" stroke-width="1" fill="none"><ellipse rx="10" ry="4.5"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse></g></svg></code>
 
