@@ -2,7 +2,7 @@
  <h2>👨🏻‍💻 &nbsp; About Me</h2> 
  <p>😄 Pronouns: He/him</p>
 
- <p>MY HOME <code><a target="_blank" href = "https://vivekcse.in"><img height="40" src="https://img.icons8.com/dusk/64/000000/home--v1.png"></a></code> </p>
+ <p>Portfolio<code><a target="_blank" href = "https://vivekcse.in"><img height="40" src="https://img.icons8.com/dusk/64/000000/home--v1.png"></a></code> </p>
 
 <code><a target="_blank" href="https://vivekcse.in"><img  src="https://raw.githubusercontent.com/vivekcsein/githost/main/images/vivekcse/vivekcsebannerv102.png"></a></code>
 
