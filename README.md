@@ -11,7 +11,7 @@
 </p>
 
 <p> 
-&nbsp; Experienced in server-side rendering and adept at translating design concepts into seamless responsive user interfaces. 
+✍️ &nbsp; Experienced in server-side rendering and adept at translating design concepts into seamless responsive user interfaces. 
 </p>
 
 <p>
@@ -23,7 +23,7 @@
 </p>
 
 <p>
-✍️ &nbsp; In my free time, I pursue YouTube and Gaming as my hobby.
+🎮 &nbsp; In my free time, I pursue YouTube and Gaming as my hobby.
 </p>
 
 <p>
