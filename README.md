@@ -19,7 +19,7 @@
 </p>
 
 <p>
-🌱 &nbsp; I use Nextjs for creating stunning  websites and web applications with beautiful animations.
+🌱 &nbsp; I use Nextjs with Sass & tailwind for creating stunning appealing websites and gsap for beautiful animations.
 </p>
 
 <p>
@@ -28,7 +28,6 @@
 
 <p>
 ⚡ Fun fact: Feel Free to connect me on LinkedIn  <code><a target="_blank" href = "https://www.linkedin.com/in/vivekcsein/"><img height="40" src="https://img.icons8.com/color/96/000000/linkedin.png"></a></code> & my Youtube <code><a target="_blank" href = "https://www.youtube.com/@vivekcsear"><img height="40" src="https://img.icons8.com/color/96/000000/youtube.png"></a></code>
-
 </p>
 
 <h2>🛠 &nbsp;Technical Skills</h2>
