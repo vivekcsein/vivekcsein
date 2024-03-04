@@ -7,7 +7,11 @@
 <code><a target="_blank" href="https://vivekcse.in"><img  src="https://raw.githubusercontent.com/vivekcsein/githost/main/images/vivekcse/vivekcsebannerv102.png"></a></code>
 
 <p>
-💡&nbsp; Dedicated and detail-oriented NEXTJS and ReactJS developer with a passion for crafting high-performance web applications. Experienced in server-side rendering and adept at translating design concepts into seamless responsive user interfaces. 
+💡&nbsp; Dedicated and detail-oriented NEXTJS and ReactJS developer with a passion for crafting high-performance web applications
+</p>
+
+<p> 
+&nbsp; Experienced in server-side rendering and adept at translating design concepts into seamless responsive user interfaces. 
 </p>
 
 <p>
