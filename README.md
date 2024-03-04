@@ -27,7 +27,7 @@
 </p>
 
 <p>
-⚡ Fun fact: Feel Free to connect me on LinkedIn  <code><a target="_blank" href = "https://www.linkedin.com/in/vivekcsein/"><img height="40" src="https://img.icons8.com/color/96/000000/linkedin.png"></a></code> & my Youtube <code><a target="_blank" href = "https://www.youtube.com/@vivekcsear"><img height="40" src="https://img.icons8.com/color/96/000000/youtube.png"></a></code>
+⚡ Fun fact: Feel Free to connect me on LinkedIn  <code><a target="_blank" href = "https://www.linkedin.com/in/vivekcsein/"><img height="40" src="https://img.icons8.com/color/96/000000/linkedin.png"></a></code> & my Youtube <code><a target="_blank" href = "https://www.youtube.com/@vivekcsein"><img height="40" src="https://img.icons8.com/color/96/000000/youtube.png"></a></code>
 </p>
 
 <h2>🛠 &nbsp;Technical Skills</h2>
