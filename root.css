@@ -1,44 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400&family=Open+Sans:wght@300;400&family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&family=Work+Sans:ital,wght@0,300;1,400&display=swap');
 
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* backgound color: 60% */
+        --bgc: #000000;
+        /* primary color: 30% */
+        --primary: #dd00ff;
+        /* secondary color: 9% */
+        --secondary: #6600ff;
+        /* success color: 1% */
+        --success: #10ff10;
+        /* danger color 0.01 */
+        --danger: #ff0000;
+        /* text colors  */
+        --textDark: #eeaaaa;
+        --textLight: #ffddff;
+        --textMuted: #ededed;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* backgound color: 60% */
+        --bgc: #000000;
+        /* primary color: 30% */
+        --primary: #dd00ff;
+        /* secondary color: 9% */
+        --secondary: #6600ff;
+        /* success color: 1% */
+        --success: #10ff10;
+        /* danger color 0.01 */
+        --danger: #ff0000;
+        /* text colors  */
+        --textDark: #00eeff;
+        --textLight: #ffddff;
+        --textMuted: #ededed;
+    }
+}
+
 :root {
+    --fav_gray: #0f1122;
+    --fav_blue: #4e4ee3;
+    --fav_pink: #ff9ff3;
+    --fav_purple: #b4238e;
+    --fav_sky: #69e9f5;
+    --fav_sun: #ff6700;
+    --fav_gold: #ffdd00;
+    --fav_green: #39aa69;
 
-    /* color: 60%;; */
-    --primary_color1: #010100;
-    /* color: 30%;; */
-    --primary_color2: #d1903b;
-    /* color: 10%;; */
-    --primary_color3: rgba(122, 133, 255, .7);
-    /* color: 1%;; */
-    --primary_color4: rgb(127, 223, 59);
+    --fav_gray_shade: #0f1122d6;
+    --fav_blue_shade: #4e4ee3d6;
+    --fav_pink_shade: #ff9ff3d6;
+    --fav_purple_shade: #b4238ed6;
+    --fav_sky_shade: #69e9f5d6;
+    --fav_sun_shade: #ff6700d6;
+    --fav_gold_shade: #ffdd00b6;
+    --fav_green_shade: #38aa69;
 
-    --text_color_default: #e5bb23;
-    --text_color_onhover: #e86c0d;
-    --text_color_highlighted: #ff6f00;
-    --button_color: #ffffff;
-    --button_color_onHover: #e43535;
+    /*global shadow on borders */
+    --shadow: #00000033;
+    --shadowLight: #ffccff;
+    /* --gradient: */
+    --gradientc1: #eebbff;
+    --gradientc2: #ff44dd;
+    --gradient: linear-gradient(90deg,
+            var(--gradientc1) 10%,
+            var(--gradientc2) 100%);
 
-    --primary_gradient_color1: #E2B0FF;
-    --primary_gradient_color2: #9F44D3;
-
-    --primary_alt_color1: #c4c4f6;
-    --primary_alt_color2: #4827db;
-    --primary_alt_color3: #df8a3b;
-
-    color-scheme: light dark;
+    --color_scheme: light dark;
     --dark_mode: #1a1a1a;
+    --night_mode: #212142;
     --light_mode: #cccccc;
-    --night_mode: #213547;
 
-    --black: #000000;
-    --white: #ffffff;
-    --blue_fav: #4e4ee3;
-    --pink_fav: #b4238e;
-    --purple_fav: #ff9ff3;
-    --color0: #69e9f5;
-    --color1: #ffd000;
-    --color2: #dc6249;
-    --color3: #BD4EC4;
-    --color4: #5f27cd;
+    --gradientp1: var(--primary);
+    --gradientp2: var(--secondary);
+    --gradientbgc: linear-gradient(90deg,
+            var(--gradientp1) 10%,
+            var(--gradientp2) 100%);
 
     /* font cofig */
     --font_1: "Poppins";
@@ -48,32 +87,26 @@
     --font_5: "Open Sans";
     --font_6: "Work Sans";
     --font_7: "sans-serif";
-    --font_default_size: 1.2rem;
-    --font_onHover_size: 1.5rem;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
     font-family: var(--font_1), var(--font_2), var(--font_3), var(--font_4), var(--font_5), var(--font_6), var(--font_7) "Segoe UI", Geneva, Tahoma, sans-serif;
     color: var(--text_color_default);
-    text-decoration: none;
+    outline: none;
     list-style: none;
+    text-decoration: none;
     /*   font-size: 62.5%; */
 }
 
-html{
-    scroll-behavior: smooth;
-}
 
 body {
     width: 100vw;
@@ -93,23 +126,75 @@ body {
 }
 
 h1 {
-    font-family: var(--font_3);
-    font-size: 3rem;
-    color: #4827db
+    font-size: 3.25rem;
 }
 
 h2 {
-    font-family: var(--font_2);
+    font-size: 2.5rem;
 }
 
+h3 {
+    font-size: 2.074rem;
+}
+
+h4 {
+    font-size: 1.728rem;
+}
+
+h5 {
+    font-size: 1.44rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--textDark);
+    line-height: 1.25;
+    font-weight: 700;
+    text-wrap: pretty;
+}
+
+p,
+div,
+span {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    p,
+    div,
+    span {
+        font-size: 0.8rem;
+    }
+}
+
+p.small {
+    font-size: 0.833rem;
+}
+
+div,
+span,
 p {
-    font-family: var(--font_4);
-    font-weight: lighter;
+    color: var(--textLight);
+    line-height: 1.6;
+    font-weight: 500;
+    text-wrap: pretty;
 }
 
-a {
-    font-family: var(--font_4);
-    font-weight: bold;
+.textDark {
+    color: var(--textDark);
+}
+
+.textLight {
+    color: var(--textLight);
 }
 
 .flex {
@@ -131,4 +216,67 @@ a {
     button {
         color: #f9f9f9;
     }
+}
+
+.bg_awesome {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(-45deg,
+            var(--primary),
+            var(--secondary),
+            var(--primary),
+            var(--secondary));
+    background-size: 400% 400%;
+    animation: bg_awesome 20s ease infinite;
+    height: 100vh;
+}
+
+@keyframes bg_awesome {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: var(--bgc);
+    color: var(--textDark);
+}
+
+input::placeholder {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    text-decoration: none;
+    background-color: var(--bgc);
+    color: var(--textDark);
+}
+
+.Line {
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(-45deg,
+            var(--primary),
+            var(--secondary),
+            var(--primary),
+            var(--secondary));
+    animation: bg_awesome 20s ease infinite;
 }
