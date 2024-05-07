@@ -1,0 +1,15 @@
+body {
+
+    /* color codes  */
+
+    --orange: #FF8000;
+    --neon-theme: #8855FF;
+    --dark-pink: #EE44FF;
+    --light-pink: #FFAADD;
+
+    /* background gradient */
+    background-image: linear-gradient(178deg, #dd00ff 26%, #7654ff 87%);
+    background-image: linear-gradient(178deg, #7950f2 5%, #4dabf7 95%);
+
+
+}
