@@ -7,23 +7,23 @@
 <code><a target="_blank" href="https://vivekcse.in"><img  src="https://raw.githubusercontent.com/vivekcsein/githost/main/images/vivekcse/vivekcsebannerv102.png"></a></code>
 
 <p>
-💡&nbsp; Dedicated and detail-oriented NEXTJS and ReactJS developer with a passion for crafting high-performance web applications
+💡&nbsp; Proficiency in Next.js, React.js, Node.js, HTML, CSS, and JavaScript.
 </p>
 
 <p> 
-✍️ &nbsp; Experienced in server-side rendering and adept at translating design concepts into seamless responsive user interfaces. 
+✍️ &nbsp; Knowledge of RESTful APIs and microservices architecture connecting databases like MySQL and PostgreSQL.
 </p>
 
 <p>
-🎓 &nbsp; As a JavaScript developer, I embrace the challenge of crafting seamless, responsive, and visually stunning web applications.
+🎓 &nbsp; Develop and maintain web applications using Next.js. Implement server-side rendering (SSR), static site generation (SSG), and API routes.
 </p>
 
 <p>
-🌱 &nbsp; I use Nextjs with Sass & tailwind for creating stunning appealing websites and gsap for beautiful animations.
+🌱 &nbsp; Optimize web performance, SEO, and security by integrating third-party services and APIs.
 </p>
 
 <p>
-🎮 &nbsp; In my free time, I pursue YouTube and Gaming as my hobby.
+🎮 &nbsp; In my free time, I pursue YouTube and Gaming as my hobbies.
 </p>
 
 <p>
