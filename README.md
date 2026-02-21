@@ -30,7 +30,7 @@
 ⚡ Fun fact: Feel Free to connect me on LinkedIn  <code><a target="_blank" href =""><img height="40" src="https://img.icons8.com/color/96/000000/linkedin.png"></a></code> & my Youtube <code><a target="_blank" href = "https://www.youtube.com/@vivekcsein"><img height="40" src="https://img.icons8.com/color/96/000000/youtube.png"></a></code>
 </p>
 
-<h2>🛠 &nbsp;Technical Skills</h2>
+<h2>🛠 &nbsp;Technical Skills with AI</h2>
 
 <code><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></a></code>
 <code><a href = "https://www.typescriptlang.org/"><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></a></code>
