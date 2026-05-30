@@ -1,5 +1,5 @@
 <div align="center">
-![]([https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white](https://media.licdn.com/dms/image/v2/D5616AQGPe0P7NbCibw/profile-displaybackgroundimage-shrink_350_1400/B56Z56Be93H0AU-/0/1780163670115?e=1781740800&v=beta&t=vi1NMm5BjQ4cEsQa3uDGogLTYxEhyC1ZKyQvmBo-MjM))
+![](https://media.licdn.com/dms/image/v2/D5616AQGPe0P7NbCibw/profile-displaybackgroundimage-shrink_350_1400/B56Z56Be93H0AU-/0/1780163670115?e=1781740800&v=beta&t=vi1NMm5BjQ4cEsQa3uDGogLTYxEhyC1ZKyQvmBo-MjM)
 </div>
 
 Full-stack developer building production-ready web applications — from polished Next.js frontends to robust Fastify backends with real-world auth, caching, and deployment.
