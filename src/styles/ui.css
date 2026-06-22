@@ -1,0 +1,169 @@
+/* =========================================================
+   LINK (THEME-AWARE + ANIMATED)
+   ========================================================= */
+
+a {
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: hsl(var(--primary));
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition:
+    color 0.25s ease,
+    opacity 0.2s ease;
+}
+
+/* ✨ Animated underline */
+a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: hsl(var(--primary));
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+/* 💜 Hover effect */
+a:hover {
+  color: hsl(var(--primary));
+  opacity: 0.9;
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ⚡ Active (click feedback) */
+a:active {
+  opacity: 0.7;
+}
+
+/* ♿ Focus (accessibility) */
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring));
+  border-radius: 4px;
+}
+
+a.link-accent {
+  color: hsl(var(--accent));
+}
+
+a.link-accent::after {
+  background: hsl(var(--accent));
+}
+
+/* =========================================================
+   BUTTON (PREMIUM + GLOSSY)
+   ========================================================= */
+
+button {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  white-space: nowrap;
+  user-select: none;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid hsl(var(--primary) / 0.25);
+
+  /* 💜 Gradient base */
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.75));
+
+  color: hsl(var(--primary-foreground));
+
+  /* ✨ Smooth animation */
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* ✨ Glossy Shine Layer */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+
+  transform: skewX(-20deg);
+}
+
+/* 🔥 Shine animation on hover */
+button:hover::before {
+  animation: shine 0.9s ease forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+/* 💜 Hover (lift + glow) */
+button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px hsl(var(--primary) / 0.35),
+    0 0 0 1px hsl(var(--primary) / 0.25);
+
+  filter: brightness(1.05);
+}
+
+/* ⚡ Active (press) */
+button:active {
+  transform: scale(0.96);
+  box-shadow: 0 5px 12px hsl(var(--primary) / 0.25);
+}
+
+/* ♿ Focus */
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px hsl(var(--background)),
+    0 0 0 4px hsl(var(--ring));
+}
+
+/* Disabled */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ghost button */
+button.ghost {
+  background: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.3);
+}
+
+button.ghost:hover {
+  background: hsl(var(--primary) / 0.1);
+}

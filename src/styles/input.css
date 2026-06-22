@@ -1,0 +1,1070 @@
+/* ============================================================
+   PREMIUM GLOBAL INPUT CSS
+   World-class design system for all input elements
+   Supports: light/dark mode, all states, all variants
+   ============================================================ */
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* Typography */
+  --input-font: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --input-font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", ui-monospace, monospace;
+  --input-font-size: 14.5px;
+  --input-font-size-sm: 13px;
+  --input-font-size-lg: 16px;
+  --input-font-weight: 400;
+  --input-letter-spacing: -0.01em;
+  --input-line-height: 1.5;
+
+  /* Sizing */
+  --input-height: 42px;
+  --input-height-sm: 34px;
+  --input-height-lg: 52px;
+  --input-px: 14px;
+  --input-px-sm: 10px;
+  --input-px-lg: 18px;
+  --input-radius: 10px;
+  --input-radius-sm: 7px;
+  --input-radius-lg: 14px;
+
+  /* Backgrounds */
+  --input-bg: #ffffff;
+  --input-bg-hover: #fafaf9;
+  --input-bg-disabled: #f5f4f2;
+  --input-bg-readonly: #f5f4f2;
+  --input-bg-error: #fff8f8;
+  --input-bg-success: #f7fbf5;
+  --input-bg-warning: #fffbf4;
+
+  /* Text */
+  --input-text: #1a1917;
+  --input-text-placeholder: #a09d96;
+  --input-text-disabled: #c2bfb9;
+  --input-text-readonly: #6b6860;
+  --input-text-hint: #888780;
+  --input-text-label: #44413e;
+  --input-text-error: #c24e27;
+  --input-text-success: #0f6e56;
+  --input-text-warning: #854f0b;
+
+  /* Borders */
+  --input-border: rgba(0, 0, 0, 0.14);
+  --input-border-hover: rgba(0, 0, 0, 0.26);
+  --input-border-focus: #534ab7;
+  --input-border-error: #d85a30;
+  --input-border-success: #1d9e75;
+  --input-border-warning: #ba7517;
+  --input-border-disabled: rgba(0, 0, 0, 0.08);
+
+  /* Focus rings */
+  --input-ring-focus: rgba(83, 74, 183, 0.18);
+  --input-ring-error: rgba(216, 90, 48, 0.16);
+  --input-ring-success: rgba(29, 158, 117, 0.16);
+  --input-ring-warning: rgba(186, 117, 23, 0.16);
+
+  /* Shadows */
+  --input-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --input-shadow-focus: 0 0 0 3.5px var(--input-ring-focus), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --input-shadow-error: 0 0 0 3.5px var(--input-ring-error);
+  --input-shadow-success: 0 0 0 3.5px var(--input-ring-success);
+  --input-shadow-warning: 0 0 0 3.5px var(--input-ring-warning);
+
+  /* Affix (prefix/suffix) */
+  --input-affix-bg: #f8f7f5;
+  --input-affix-text: #888780;
+  --input-affix-border: rgba(0, 0, 0, 0.11);
+
+  /* Label */
+  --input-label-size: 13px;
+  --input-label-weight: 500;
+  --input-label-gap: 6px;
+
+  /* Hint / helper text */
+  --input-hint-size: 12px;
+  --input-hint-gap: 5px;
+
+  /* Counter */
+  --input-counter-size: 11.5px;
+
+  /* Transitions */
+  --input-transition:
+    background 140ms ease, border-color 140ms ease, box-shadow 140ms ease, color 140ms ease;
+}
+
+/* ============================================================
+   2. DARK MODE TOKENS
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --input-bg: #1e1d1b;
+    --input-bg-hover: #252420;
+    --input-bg-disabled: #181716;
+    --input-bg-readonly: #181716;
+    --input-bg-error: #2a1a17;
+    --input-bg-success: #131e18;
+    --input-bg-warning: #221a0f;
+
+    --input-text: #e8e5e0;
+    --input-text-placeholder: #524f4a;
+    --input-text-disabled: #3a3835;
+    --input-text-readonly: #6b6860;
+    --input-text-hint: #6b6860;
+    --input-text-label: #b5b2aa;
+    --input-text-error: #f0997b;
+    --input-text-success: #5dcaa5;
+    --input-text-warning: #ef9f27;
+
+    --input-border: rgba(255, 255, 255, 0.1);
+    --input-border-hover: rgba(255, 255, 255, 0.2);
+    --input-border-focus: #afa9ec;
+    --input-border-error: #f0997b;
+    --input-border-success: #5dcaa5;
+    --input-border-warning: #ef9f27;
+    --input-border-disabled: rgba(255, 255, 255, 0.05);
+
+    --input-ring-focus: rgba(175, 169, 236, 0.22);
+    --input-ring-error: rgba(240, 153, 123, 0.2);
+    --input-ring-success: rgba(93, 202, 165, 0.2);
+    --input-ring-warning: rgba(239, 159, 39, 0.2);
+
+    --input-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --input-shadow-focus: 0 0 0 3.5px var(--input-ring-focus), 0 1px 3px rgba(0, 0, 0, 0.24);
+
+    --input-affix-bg: #171614;
+    --input-affix-text: #6b6860;
+    --input-affix-border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ============================================================
+   3. BASE INPUT RESET & CORE STYLES
+   Applies to: all input types, textarea, select
+   ============================================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="color"],
+textarea,
+select {
+  /* Reset */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+
+  /* Layout */
+  display: block;
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 var(--input-px);
+
+  /* Typography */
+  font-family: var(--input-font);
+  font-size: var(--input-font-size);
+  font-weight: var(--input-font-weight);
+  letter-spacing: var(--input-letter-spacing);
+  line-height: var(--input-line-height);
+  color: var(--input-text);
+
+  /* Visual */
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  box-shadow: var(--input-shadow);
+
+  /* Behavior */
+  transition: var(--input-transition);
+}
+
+/* ============================================================
+   4. PLACEHOLDER
+   ============================================================ */
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-text-placeholder);
+  font-weight: 400;
+  opacity: 1;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: var(--input-text-placeholder);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--input-text-placeholder);
+  opacity: 1;
+}
+
+/* ============================================================
+   5. INTERACTIVE STATES
+   ============================================================ */
+
+/* Hover */
+input[type="text"]:hover:not(:disabled):not(:read-only),
+input[type="email"]:hover:not(:disabled):not(:read-only),
+input[type="password"]:hover:not(:disabled):not(:read-only),
+input[type="number"]:hover:not(:disabled):not(:read-only),
+input[type="tel"]:hover:not(:disabled):not(:read-only),
+input[type="url"]:hover:not(:disabled):not(:read-only),
+input[type="search"]:hover:not(:disabled):not(:read-only),
+input[type="date"]:hover:not(:disabled):not(:read-only),
+input[type="time"]:hover:not(:disabled):not(:read-only),
+input[type="datetime-local"]:hover:not(:disabled):not(:read-only),
+input[type="month"]:hover:not(:disabled):not(:read-only),
+input[type="week"]:hover:not(:disabled):not(:read-only),
+textarea:hover:not(:disabled):not(:read-only),
+select:hover:not(:disabled) {
+  background-color: var(--input-bg-hover);
+  border-color: var(--input-border-hover);
+}
+
+/* Focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--input-bg);
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+/* Disabled */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--input-bg-disabled);
+  border-color: var(--input-border-disabled);
+  color: var(--input-text-disabled);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 1;
+}
+
+input:disabled::placeholder,
+textarea:disabled::placeholder {
+  color: var(--input-text-disabled);
+}
+
+/* Read-only */
+input:read-only,
+textarea:read-only {
+  background-color: var(--input-bg-readonly);
+  color: var(--input-text-readonly);
+  cursor: default;
+  box-shadow: none;
+}
+
+input:read-only:focus,
+textarea:read-only:focus {
+  border-color: var(--input-border);
+  box-shadow: none;
+}
+
+/* ============================================================
+   6. SEMANTIC STATE VARIANTS
+   Usage: add class to the input element
+   ============================================================ */
+
+/* Error */
+input.input--error,
+textarea.input--error,
+select.input--error {
+  border-color: var(--input-border-error);
+  background-color: var(--input-bg-error);
+}
+
+input.input--error:focus,
+textarea.input--error:focus,
+select.input--error:focus {
+  box-shadow: var(--input-shadow-error);
+  border-color: var(--input-border-error);
+}
+
+input.input--error:hover:not(:disabled),
+textarea.input--error:hover:not(:disabled) {
+  background-color: var(--input-bg-error);
+  border-color: var(--input-border-error);
+}
+
+/* Success */
+input.input--success,
+textarea.input--success,
+select.input--success {
+  border-color: var(--input-border-success);
+  background-color: var(--input-bg-success);
+}
+
+input.input--success:focus,
+textarea.input--success:focus,
+select.input--success:focus {
+  box-shadow: var(--input-shadow-success);
+  border-color: var(--input-border-success);
+}
+
+/* Warning */
+input.input--warning,
+textarea.input--warning,
+select.input--warning {
+  border-color: var(--input-border-warning);
+  background-color: var(--input-bg-warning);
+}
+
+input.input--warning:focus,
+textarea.input--warning:focus,
+select.input--warning:focus {
+  box-shadow: var(--input-shadow-warning);
+  border-color: var(--input-border-warning);
+}
+
+/* ============================================================
+   7. SIZE VARIANTS
+   Usage: add class to the input element
+   ============================================================ */
+
+/* Small */
+input.input--sm,
+select.input--sm {
+  height: var(--input-height-sm);
+  padding: 0 var(--input-px-sm);
+  font-size: var(--input-font-size-sm);
+  border-radius: var(--input-radius-sm);
+}
+
+/* Large */
+input.input--lg,
+select.input--lg {
+  height: var(--input-height-lg);
+  padding: 0 var(--input-px-lg);
+  font-size: var(--input-font-size-lg);
+  border-radius: var(--input-radius-lg);
+}
+
+/* ============================================================
+   8. CONTENT VARIANTS
+   ============================================================ */
+
+/* Monospace — for API keys, tokens, OTPs, code */
+input.input--mono,
+textarea.input--mono {
+  font-family: var(--input-font-mono);
+  letter-spacing: 0;
+}
+
+/* Centered — for OTP / PIN inputs */
+input.input--center {
+  text-align: center;
+  letter-spacing: 0.35em;
+}
+
+/* No-spin — removes number input arrows */
+input.input--no-spin::-webkit-outer-spin-button,
+input.input--no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.input--no-spin[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ============================================================
+   9. TEXTAREA
+   ============================================================ */
+
+textarea {
+  height: auto;
+  min-height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+textarea.input--sm {
+  min-height: 72px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+textarea.input--lg {
+  min-height: 120px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+textarea.input--no-resize {
+  resize: none;
+}
+
+textarea.input--auto-resize {
+  resize: none;
+  overflow: hidden;
+}
+
+/* ============================================================
+   10. SELECT
+   ============================================================ */
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+@media (prefers-color-scheme: dark) {
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23524f4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  }
+}
+
+select option {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+/* ============================================================
+   11. INPUT WRAPPER
+   Container for prefix/suffix/icon compositions
+   Usage: <div class="input-wrapper"> … </div>
+   ============================================================ */
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* ============================================================
+   12. PREFIX & SUFFIX
+   Usage:
+     <div class="input-wrapper has-prefix has-suffix">
+       <span class="input-prefix">$</span>
+       <input type="number" />
+       <span class="input-suffix">USD</span>
+     </div>
+   ============================================================ */
+
+.input-prefix,
+.input-suffix {
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+  font-family: var(--input-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--input-affix-text);
+  background-color: var(--input-affix-bg);
+  border: 1px solid var(--input-border);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  flex-shrink: 0;
+  transition: border-color 140ms ease;
+}
+
+.input-prefix {
+  border-right: none;
+  border-radius: var(--input-radius) 0 0 var(--input-radius);
+}
+
+.input-suffix {
+  border-left: none;
+  border-radius: 0 var(--input-radius) var(--input-radius) 0;
+}
+
+/* Adjust input border-radius when affixed */
+.has-prefix input,
+.has-prefix textarea,
+.has-prefix select {
+  border-radius: 0 var(--input-radius) var(--input-radius) 0;
+}
+
+.has-suffix input,
+.has-suffix textarea,
+.has-suffix select {
+  border-radius: var(--input-radius) 0 0 var(--input-radius);
+}
+
+.has-prefix.has-suffix input,
+.has-prefix.has-suffix textarea,
+.has-prefix.has-suffix select {
+  border-radius: 0;
+}
+
+/* Size adjustments for affixes */
+.input-wrapper.has-sm .input-prefix,
+.input-wrapper.has-sm .input-suffix {
+  font-size: 12px;
+  padding: 0 8px;
+  border-radius: var(--input-radius-sm) 0 0 var(--input-radius-sm);
+}
+
+.input-wrapper.has-lg .input-prefix,
+.input-wrapper.has-lg .input-suffix {
+  font-size: 14px;
+  padding: 0 14px;
+}
+
+/* ============================================================
+   13. ICON SLOTS
+   Usage:
+     <div class="input-wrapper has-icon-left">
+       <span class="input-icon icon-left">…</span>
+       <input type="text" />
+     </div>
+   ============================================================ */
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  pointer-events: none;
+  color: var(--input-affix-text);
+  transition: color 140ms ease;
+  z-index: 1;
+}
+
+.input-icon.icon-left {
+  left: 2px;
+}
+
+.input-icon.icon-right {
+  right: 2px;
+}
+
+.input-icon svg,
+.input-icon i {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  display: block;
+}
+
+/* Nudge input padding when icon is present */
+.has-icon-left input {
+  padding-left: 38px;
+}
+
+.has-icon-right input {
+  padding-right: 38px;
+}
+
+.has-icon-left.has-icon-right input {
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+/* ============================================================
+   14. INLINE ACTION BUTTON
+   Usage: password reveal, copy, clear
+   <button class="input-action" type="button">…</button>
+   ============================================================ */
+
+.input-action {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--input-affix-text);
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+  z-index: 1;
+}
+
+.input-action:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+  color: var(--input-text);
+}
+
+.input-action:active {
+  background-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-50%) scale(0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-action:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+  }
+
+  .input-action:active {
+    background-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+.input-action svg,
+.input-action i {
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Nudge input padding when action is present */
+.has-action input {
+  padding-right: 42px;
+}
+
+/* ============================================================
+   15. LABEL
+   Usage: <label class="input-label">Email</label>
+   ============================================================ */
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--input-font);
+  font-size: var(--input-label-size);
+  font-weight: var(--input-label-weight);
+  color: var(--input-text-label);
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+  margin-bottom: var(--input-label-gap);
+  cursor: default;
+  user-select: none;
+}
+
+.input-label .label-required {
+  color: var(--input-border-error);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.input-label .label-optional {
+  font-weight: 400;
+  color: var(--input-text-hint);
+  font-size: 12px;
+}
+
+/* ============================================================
+   16. HINT / HELPER TEXT
+   Usage: <p class="input-hint">Some guidance text.</p>
+   ============================================================ */
+
+.input-hint {
+  font-family: var(--input-font);
+  font-size: var(--input-hint-size);
+  color: var(--input-text-hint);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  margin-top: var(--input-hint-gap);
+  margin-bottom: 0;
+}
+
+.input-hint.hint--error {
+  color: var(--input-text-error);
+}
+
+.input-hint.hint--success {
+  color: var(--input-text-success);
+}
+
+.input-hint.hint--warning {
+  color: var(--input-text-warning);
+}
+
+/* ============================================================
+   17. CHARACTER COUNTER
+   Usage: <span class="input-counter">0 / 280</span>
+   ============================================================ */
+
+.input-counter {
+  font-family: var(--input-font-mono);
+  font-size: var(--input-counter-size);
+  color: var(--input-text-hint);
+  text-align: right;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  transition: color 140ms ease;
+}
+
+.input-counter.counter--near {
+  color: var(--input-text-warning);
+}
+
+.input-counter.counter--over {
+  color: var(--input-text-error);
+  font-weight: 500;
+}
+
+/* ============================================================
+   18. INPUT GROUP (FIELD STACK)
+   Wraps label + input + hint as a single unit
+   Usage: <div class="input-group"> … </div>
+   ============================================================ */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.input-group + .input-group {
+  margin-top: 1.25rem;
+}
+
+/* ============================================================
+   19. INPUT FIELD SET (JOINED MULTI-INPUT ROW)
+   Usage: <div class="input-fieldset"> … </div>
+   ============================================================ */
+
+.input-fieldset {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-fieldset input,
+.input-fieldset select {
+  border-radius: 0;
+  border-right-width: 0;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.input-fieldset input:first-child,
+.input-fieldset select:first-child {
+  border-radius: var(--input-radius) 0 0 var(--input-radius);
+}
+
+.input-fieldset input:last-child,
+.input-fieldset select:last-child {
+  border-radius: 0 var(--input-radius) var(--input-radius) 0;
+  border-right-width: 1px;
+}
+
+.input-fieldset input:focus,
+.input-fieldset select:focus {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   20. SEARCH INPUT — Clears WebKit native X button
+   ============================================================ */
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* ============================================================
+   21. DATE / TIME INPUTS — Normalize Chrome/Safari chrome
+   ============================================================ */
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="month"]::-webkit-calendar-picker-indicator,
+input[type="week"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+  filter: invert(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+  input[type="month"]::-webkit-calendar-picker-indicator,
+  input[type="week"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.6;
+  }
+}
+
+/* ============================================================
+   22. COLOR INPUT
+   ============================================================ */
+
+input[type="color"] {
+  height: var(--input-height);
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 5px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+/* ============================================================
+   23. RANGE INPUT
+   ============================================================ */
+
+input[type="range"] {
+  height: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--input-border-hover);
+  border-radius: 99px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--input-border-focus);
+  margin-top: -7px;
+  border: 2px solid var(--input-bg);
+  box-shadow:
+    0 0 0 1px var(--input-border-focus),
+    0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 120ms ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: var(--input-border-hover);
+  border-radius: 99px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--input-border-focus);
+  border: 2px solid var(--input-bg);
+  box-shadow:
+    0 0 0 1px var(--input-border-focus),
+    0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================================
+   24. CHECKBOX & RADIO
+   ============================================================ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  padding: 0;
+  border: 1.5px solid var(--input-border-hover);
+  background-color: var(--input-bg);
+  cursor: pointer;
+  box-shadow: var(--input-shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--input-transition);
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:hover:not(:disabled),
+input[type="radio"]:hover:not(:disabled) {
+  border-color: var(--input-border-focus);
+  background-color: var(--input-bg-hover);
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  box-shadow: var(--input-shadow-focus);
+  border-color: var(--input-border-focus);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--input-border-focus);
+  border-color: var(--input-border-focus);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='2,6 5,9 10,3' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--input-border-focus);
+  border-color: var(--input-border-focus);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='3' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled {
+  background-color: var(--input-bg-disabled);
+  border-color: var(--input-border-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input[type="checkbox"]:checked:disabled,
+input[type="radio"]:checked:disabled {
+  background-color: var(--input-border-disabled);
+}
+
+/* ============================================================
+   25. FILE INPUT
+   ============================================================ */
+
+input[type="file"] {
+  height: auto;
+  padding: 9px var(--input-px);
+  cursor: pointer;
+  font-size: var(--input-font-size-sm);
+  color: var(--input-text-hint);
+}
+
+input[type="file"]::file-selector-button {
+  font-family: var(--input-font);
+  font-size: var(--input-font-size-sm);
+  font-weight: 500;
+  color: var(--input-text);
+  background-color: var(--input-affix-bg);
+  border: 1px solid var(--input-border-hover);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 140ms ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--input-bg-hover);
+  border-color: var(--input-border-focus);
+}
+
+/* ============================================================
+   26. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  input,
+  textarea,
+  select,
+  .input-prefix,
+  .input-suffix,
+  .input-action,
+  .input-icon {
+    transition: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   27. AUTOFILL OVERRIDES (Chrome/Safari)
+   ============================================================ */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--input-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset;
+  transition: background-color 9999s ease;
+  caret-color: var(--input-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--input-text);
+    -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset;
+  }
+}
+
+/* ============================================================
+   END OF input.global.css
+   ============================================================ */

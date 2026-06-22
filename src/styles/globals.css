@@ -14,6 +14,8 @@
    THEME VARIABLES (HSL FORMAT ONLY)
    ============================================================ */
 
+/* @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400&family=Open+Sans:wght@300;400&family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&family=Work+Sans:ital,wght@0,300;1,400&display=swap"); */
+
 @layer base {
   :root {
     --background: 0 0% 98%;
@@ -76,12 +78,6 @@
   }
 
   :root {
-    /* color codes  */
-    --orange: #ff8000;
-    --neon-theme: #8855ff;
-    --dark-pink: #ee44ff;
-    --light-pink: #ffaadd;
-
     /* 🔥 Fluid type scale */
     --fs-h1: clamp(1.8rem, 3.5vw + 0.5rem, 2.8rem);
     --fs-h2: clamp(1.5rem, 2.8vw + 0.4rem, 2.2rem);
@@ -160,16 +156,12 @@ html {
 }
 
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
   font-size: 1rem;
   line-height: 1.6;
   color: hsl(var(--foreground));
   background-color: hsl(var(--background));
   min-height: 100svh;
-
-  /* background gradient */
-  /* background-image: linear-gradient(178deg, #dd00ff 26%, #7654ff 87%); */
-  /* background-image: linear-gradient(178deg, #7950f2 5%, #4dabf7 95%); */
 }
 
 /* OPTIONAL SMOOTH TRANSITION */
@@ -191,4 +183,186 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* =========================================================
+   TYPOGRAPHY SYSTEM (FLUID + RESPONSIVE)
+   HEADINGS, BODY TEXT, LINKS, BLOCKQUOTES, ETC.
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  text-wrap: pretty;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: hsl(var(--muted-foreground));
+  text-wrap: pretty;
+  margin-bottom: 1em;
+}
+
+/* Small text */
+small {
+  font-size: var(--fs-small);
+  color: hsl(var(--muted-foreground));
+}
+
+/* Emphasis */
+strong,
+b {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+blockquote {
+  border-left: 3px solid hsl(var(--border));
+  padding: 0.6rem 1rem;
+  margin: 1.2rem 0;
+
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+}
+
+/* =========================================================
+   READABILITY (VERY IMPORTANT)
+   ========================================================= */
+
+/* Limit text width for better reading */
+.prose {
+  max-width: 65ch;
+}
+
+/* =========================================================
+   MOBILE TWEAKS (ONLY WHERE NEEDED)
+   ========================================================= */
+
+@media (max-width: 640px) {
+  h1 {
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  blockquote {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* ============================================================
+   CODE
+   ============================================================ */
+
+code,
+kbd {
+  font-family: ui-monospace, "Fira Code", Consolas, monospace;
+  font-size: 0.875em;
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  padding: 0.15em 0.4em;
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid hsl(var(--border));
+}
+
+pre {
+  font-family: ui-monospace, "Fira Code", Consolas, monospace;
+  font-size: 0.875rem;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  line-height: 1.65;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* ============================================================
+   MEDIA
+   ============================================================ */
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+
+hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 1.5rem 0;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  line-height: 1.75;
+  color: hsl(var(--muted-foreground));
+}
+
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }

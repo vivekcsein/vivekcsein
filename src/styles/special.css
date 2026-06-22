@@ -1,0 +1,40 @@
+/* css for some special effects */
+
+/* awesome animated background gradient */
+.bg_awesome {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, var(--primary), var(--secondary));
+  background-size: 400% 400%;
+  animation: bg_awesome 20s ease infinite;
+  height: 100vh;
+}
+
+@keyframes bg_awesome {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Line effect  */
+
+.Line {
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(
+    -45deg,
+    var(--primary),
+    var(--secondary),
+    var(--primary),
+    var(--secondary)
+  );
+  animation: bg_awesome 20s ease infinite;
+}
