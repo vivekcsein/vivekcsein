@@ -1,0 +1,436 @@
+# Vivek Verma — Personal Portfolio Context
+
+This document provides context for AI coding agents working on my personal portfolio and related repositories.
+
+The goal is to help every AI assistant understand who I am, how I work, and the engineering standards expected throughout this project.
+
+---
+
+# Identity
+
+**Name**
+
+Vivek Verma
+
+**Primary Handle**
+
+@vivekcsein
+
+Use this handle consistently across every platform whenever applicable.
+
+Examples:
+
+* GitHub
+* LinkedIn
+* X (Twitter)
+* npm
+* Docker Hub
+* Dev.to
+* YouTube
+* Discord
+
+Do not invent alternative usernames.
+
+---
+
+# Professional Title
+
+Preferred:
+
+* Software Engineer
+
+Alternative (when appropriate):
+
+* Product Engineer
+
+Avoid:
+
+* React Developer
+* Frontend Developer
+* JavaScript Developer
+* Full Stack Developer
+
+These titles do not accurately represent the breadth of my work.
+
+---
+
+# Professional Summary
+
+I build production-ready software with a strong focus on architecture, reusable systems, developer experience, and modern web technologies.
+
+My work spans frontend engineering, backend services, design systems, developer tooling, AI-assisted workflows, and scalable application architecture.
+
+I value software that is simple, maintainable, performant, accessible, and enjoyable to use.
+
+---
+
+# Personal Mission
+
+Build software that solves real problems while creating tools and products developers genuinely enjoy using.
+
+Long term, I aim to build products, open-source software, and companies that have a meaningful impact on the software industry.
+
+---
+
+# Current Focus
+
+Current areas of interest include:
+
+* Modern Web Applications
+* React Ecosystem
+* TypeScript
+* Next.js
+* Node.js
+* Software Architecture
+* Design Systems
+* Developer Experience
+* AI-assisted Development
+* Product Engineering
+
+---
+
+# Core Engineering Principles
+
+Every contribution should follow these principles.
+
+## Production First
+
+Build production-quality software.
+
+Avoid demo-quality implementations.
+
+---
+
+## Simplicity
+
+Prefer the simplest solution that remains maintainable.
+
+Avoid unnecessary abstractions.
+
+---
+
+## Reusability
+
+Create reusable systems instead of one-off implementations.
+
+Components should compose naturally.
+
+---
+
+## Scalability
+
+Design software that can evolve over time.
+
+Avoid architectural dead ends.
+
+---
+
+## Performance
+
+Performance is a feature.
+
+Optimize thoughtfully without sacrificing readability.
+
+---
+
+## Accessibility
+
+Accessibility is not optional.
+
+Follow semantic HTML and accessibility best practices.
+
+---
+
+## Developer Experience
+
+Developer experience matters.
+
+Prioritize:
+
+* clear APIs
+* excellent documentation
+* predictable behavior
+* readable code
+* consistent naming
+
+---
+
+# Technical Stack
+
+## Languages
+
+* TypeScript
+* JavaScript
+* HTML
+* CSS
+
+---
+
+## Frontend
+
+* React
+* Next.js
+* Astro
+
+---
+
+## Styling
+
+* Tailwind CSS
+* CSS Variables
+* SCSS
+* Responsive Design
+* Design Tokens
+
+---
+
+## Backend
+
+* Node.js
+* Express
+* REST APIs
+* GraphQL
+
+---
+
+## Database
+
+* PostgreSQL
+* MySQL
+* Prisma
+* Supabase
+
+---
+
+## State Management
+
+* Redux Toolkit
+* TanStack Query
+
+---
+
+## Authentication
+
+* Better Auth
+* NextAuth
+* JWT
+* Argon2
+
+---
+
+## Tooling
+
+* PNPM
+* Vite
+* Turbopack
+* Webpack
+* Rollup
+* TSUP
+
+---
+
+## Deployment
+
+* Vercel
+* Railway
+* Render
+
+---
+
+# Coding Style
+
+When generating code:
+
+* Prefer TypeScript.
+* Avoid `any`.
+* Prefer `unknown` when appropriate.
+* Use strict typing.
+* Keep functions focused.
+* Prefer composition over inheritance.
+* Prefer readable code over clever code.
+* Avoid unnecessary dependencies.
+
+---
+
+# Project Philosophy
+
+I prefer systems over pages.
+
+Examples include:
+
+* Design Systems
+* Component Libraries
+* Reusable Hooks
+* Utility Libraries
+* Feature-based Architecture
+* Provider Patterns
+* Shared Tokens
+* Consistent APIs
+
+Everything should fit into a larger system.
+
+---
+
+# UI Philosophy
+
+The portfolio should feel like a modern software product rather than a traditional resume website.
+
+Design characteristics:
+
+* minimal
+* elegant
+* documentation-inspired
+* product-focused
+* clean typography
+* generous spacing
+* subtle motion
+* polished interactions
+
+Avoid flashy animations that distract from the content.
+
+---
+
+# Visual Identity
+
+Primary Accent
+
+Purple
+
+Overall style
+
+* modern
+* premium
+* clean
+* technical
+* timeless
+
+---
+
+# Writing Style
+
+Writing should be:
+
+* concise
+* confident
+* professional
+* technically accurate
+* free of unnecessary buzzwords
+
+Avoid exaggerated claims.
+
+Avoid marketing clichés.
+
+Prefer clarity over hype.
+
+---
+
+# Values
+
+The portfolio should communicate these values naturally:
+
+* craftsmanship
+* curiosity
+* continuous learning
+* engineering excellence
+* long-term thinking
+* clean design
+* maintainable systems
+
+---
+
+# Portfolio Goals
+
+The website should:
+
+* showcase projects
+* demonstrate engineering quality
+* highlight architectural thinking
+* document technical knowledge
+* publish articles
+* present open-source work
+* act as the central hub for my professional identity
+
+This is not simply a resume.
+
+It is my engineering home on the internet.
+
+---
+
+# Long-Term Vision
+
+The portfolio should grow alongside my career.
+
+Eventually it will include:
+
+* engineering blog
+* open-source projects
+* developer tools
+* design systems
+* UI libraries
+* AI projects
+* SaaS products
+* technical documentation
+* talks
+* templates
+* experiments
+
+---
+
+# AI Assistant Instructions
+
+When contributing to this repository:
+
+* think like a senior software engineer
+* optimize for maintainability
+* write clean architecture
+* avoid overengineering
+* preserve consistency
+* document important decisions
+* explain trade-offs when relevant
+
+If multiple approaches exist:
+
+* recommend the most scalable
+* recommend the most maintainable
+* explain why
+
+Never optimize solely for fewer lines of code.
+
+Optimize for readability, longevity, and production quality.
+
+---
+
+# Personal Brand
+
+Name
+
+Vivek Verma
+
+Handle
+
+@vivekcsein
+
+Role
+
+Software Engineer
+
+Tagline
+
+Building thoughtful software that developers love to use.
+
+---
+
+# Final Guideline
+
+Every change should improve one or more of the following:
+
+* code quality
+* developer experience
+* maintainability
+* accessibility
+* consistency
+* performance
+* documentation
+* user experience
+
+If a contribution does not improve at least one of these areas, reconsider the implementation.
