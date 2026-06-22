@@ -1,36 +1,206 @@
 {
-    "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "typescript": "typescriptreact"
-    },
-    "settingsSync.ignoredSettings": [
-        
-    ],
-    "settingsSync.ignoredExtensions": [
-        
-    ],
-    "editor.fontFamily": "Consolas ligaturized v2, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "editor.linkedEditing": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "files.autoSave": "afterDelay",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro",
-    "window.zoomLevel": 1,
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "quickfix.biome": "explicit"
+  },
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  "settingsSync.ignoredSettings": [],
+  "settingsSync.ignoredExtensions": [],
+
+  "editor.fontFamily": "Consolas ligaturized v2, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+
+  "editor.linkedEditing": true,
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+
+  "editor.wordWrap": "off",
+
+  "editor.stickyScroll.enabled": true,
+
+  "editor.inlineSuggest.enabled": true,
+
+  "editor.parameterHints.enabled": true,
+
+  "editor.hover.delay": 250,
+
+  "editor.snippetSuggestions": "top",
+
+  "editor.suggestSelection": "first",
+
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
+  "editor.bracketPairColorization.enabled": true,
+
+  "editor.guides.bracketPairs": true,
+
+  "editor.guides.indentation": true,
+
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  },
+
+  "editor.occurrencesHighlight": "singleFile",
+
+  "editor.mouseWheelZoom": true,
+
+  "editor.largeFileOptimizations": true,
+
+  "editor.maxTokenizationLineLength": 25000,
+
+  "editor.unicodeHighlight.nonBasicASCII": false,
+
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  "files.autoSave": "afterDelay",
+
+  "files.autoSaveDelay": 800,
+
+  "files.trimTrailingWhitespace": true,
+
+  "files.insertFinalNewline": true,
+
+  "files.trimFinalNewlines": true,
+
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.turbo": true,
+    "**/coverage": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.turbo": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+
+  "explorer.confirmDelete": false,
+
+  "explorer.confirmDragAndDrop": false,
+
+  "explorer.compactFolders": false,
+
+  "git.autofetch": true,
+
+  "git.confirmSync": false,
+
+  "git.enableSmartCommit": true,
+
+  "git.openRepositoryInParentFolders": "always",
+
+  "workbench.iconTheme": "material-icon-theme",
+
+  "workbench.colorTheme": "Dark Modern",
+
+  "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
+
+  "workbench.startupEditor": "none",
+
+  "workbench.editor.enablePreview": false,
+
+  "workbench.editor.empty.hint": "hidden",
+
+  "workbench.list.smoothScrolling": true,
+
+  "workbench.editor.customLabels.patterns": {
+    "**/page.tsx": "${dirname}/page",
+    "**/layout.tsx": "${dirname}/layout",
+    "**/route.ts": "${dirname}/route",
+    "**/loading.tsx": "${dirname}/loading",
+    "**/error.tsx": "${dirname}/error",
+    "**/template.tsx": "${dirname}/template"
+  },
+
+  "breadcrumbs.enabled": true,
+
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+  "terminal.integrated.scrollback": 10000,
+
+  "terminal.integrated.copyOnSelection": true,
+
+  "terminal.integrated.enableMultiLinePasteWarning": "always",
+
+  "python.analysis.typeCheckingMode": "basic",
+
+  "supermaven.enableFixWithSupermaven": true,
+
+  "supermaven.allowGitignore": true,
+
+  "geminicodeassist.inlineSuggestions.enableAuto": true,
+
+  "geminicodeassist.displayInlineContextHint": false,
+
+  "gitlens.ai.model": "vscode",
+
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  "claudeCode.preferredLocation": "panel",
+
+  "diffEditor.codeLens": true,
+
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true
+  },
+
+  "biome.suggestInstallingGlobally": false
 }

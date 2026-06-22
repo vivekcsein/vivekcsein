@@ -48,11 +48,13 @@ Full-stack developer building production-ready web applications — from polishe
 ## 📌 Featured Projects
 
 ### [fastify-vercel-app](https://github.com/frenzzofficial/fastify-vercel-app)
+
 Production-ready Fastify + TypeScript + Bun server template deployable on Vercel.
 Includes auth, OTP (Redis), bcrypt, rate-limiting, CORS, cookie handling, and Nodemailer.
 `TypeScript` `Fastify` `Bun` `Supabase` `Redis` `Vercel`
 
 ### [six-teal-store](https://github.com/frenzzofficial/six-teal-store)
+
 Full-stack storefront built with Next.js and TypeScript.
 `Next.js` `TypeScript` `Supabase`
 

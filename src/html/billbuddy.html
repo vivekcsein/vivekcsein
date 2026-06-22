@@ -1,0 +1,3124 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BillBuddy — Get Paid Faster. Stop Chasing Invoices.</title>
+    <meta
+      name="description"
+      content="BillBuddy automates your entire invoicing workflow — send, follow up, and collect payments without lifting a finger. 14-day free trial."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                950: "#0a0f1a",
+                900: "#0d1526",
+                850: "#111827",
+                800: "#1a2235",
+                700: "#243044",
+                600: "#374a65",
+                500: "#4d6480",
+                400: "#7a93b0",
+                300: "#a8bdd2",
+                200: "#d0dce8",
+                100: "#e8eef4",
+                50: "#f2f6fa",
+              },
+              emerald: {
+                950: "#011c0f",
+                900: "#022c1a",
+                800: "#064e29",
+                700: "#077a3e",
+                600: "#059954",
+                500: "#10b96b",
+                400: "#22d37e",
+                300: "#4eeaa0",
+                200: "#8bf5c4",
+                100: "#c3fce2",
+                50: "#ebfff5",
+              },
+            },
+            fontFamily: {
+              sans: ['"Inter"', "system-ui", "sans-serif"],
+              mono: ['"JetBrains Mono"', "monospace"],
+            },
+            animation: {
+              marquee: "marquee 30s linear infinite",
+              "fade-up": "fadeUp 0.6s ease forwards",
+              "pulse-slow": "pulse 3s ease-in-out infinite",
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              fadeUp: {
+                from: { opacity: "0", transform: "translateY(24px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ── base ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        color-scheme: dark;
+      }
+
+      body {
+        background-color: #0a0f1a;
+        color: #e8eef4;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* ── scrollbar ── */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0a0f1a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #243044;
+        border-radius: 3px;
+      }
+
+      /* ── emerald glow ── */
+      .glow-emerald {
+        box-shadow: 0 0 40px -8px rgba(34, 211, 126, 0.35);
+      }
+
+      .glow-emerald-sm {
+        box-shadow: 0 0 20px -4px rgba(34, 211, 126, 0.25);
+      }
+
+      .text-glow {
+        text-shadow: 0 0 30px rgba(34, 211, 126, 0.4);
+      }
+
+      /* ── grid bg pattern ── */
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(34, 211, 126, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 211, 126, 0.04) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      /* ── nav blur ── */
+      .nav-blur {
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+      }
+
+      /* ── marquee clip ── */
+      .marquee-clip {
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 10%,
+          black 90%,
+          transparent 100%
+        );
+      }
+
+      /* ── accordion ── */
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+          padding 0.3s ease;
+      }
+
+      .faq-body.open {
+        max-height: 300px;
+        padding-top: 0.75rem;
+      }
+
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      /* ── pricing toggle ── */
+      .toggle-thumb {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .toggle-track {
+        transition: background 0.3s ease;
+      }
+
+      /* ── zebra features ── */
+      .feature-card {
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+      }
+
+      /* ── buttons ── */
+      .btn-primary {
+        background: linear-gradient(135deg, #22d37e 0%, #10b96b 100%);
+        color: #011c0f;
+        font-weight: 700;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #4eeaa0 0%, #22d37e 100%);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .btn-primary:hover::before {
+        opacity: 1;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px -4px rgba(34, 211, 126, 0.55);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      .btn-primary span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-ghost {
+        border: 1px solid rgba(168, 189, 210, 0.25);
+        color: #a8bdd2;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        background: transparent;
+      }
+
+      .btn-ghost:hover {
+        border-color: rgba(34, 211, 126, 0.4);
+        color: #22d37e;
+        background: rgba(34, 211, 126, 0.05);
+      }
+
+      /* ── testimonial cards ── */
+      .testimonial-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(36, 48, 68, 0.8);
+      }
+
+      .testimonial-card:hover {
+        border-color: rgba(34, 211, 126, 0.25);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      /* ── pricing card ── */
+      .price-card {
+        transition: all 0.3s ease;
+      }
+
+      .price-card:hover {
+        transform: translateY(-6px);
+      }
+
+      /* ── nav link ── */
+      .nav-link {
+        position: relative;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #22d37e;
+        transition: width 0.25s ease;
+      }
+
+      .nav-link:hover {
+        color: #22d37e;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* ── stat counters ── */
+      .stat-card {
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        border-color: rgba(34, 211, 126, 0.3);
+        background: rgba(34, 211, 126, 0.04);
+      }
+
+      /* ── dashboard mock ── */
+      .bar-fill {
+        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ── section divider ── */
+      .section-divider {
+        border: none;
+        border-top: 1px solid rgba(36, 48, 68, 0.6);
+      }
+
+      /* ── invoice row ── */
+      .invoice-row {
+        transition: background 0.2s ease;
+      }
+
+      .invoice-row:hover {
+        background: rgba(34, 211, 126, 0.04);
+      }
+
+      /* ── pain card ── */
+      .pain-card {
+        transition: all 0.3s ease;
+      }
+
+      .pain-card:hover {
+        border-color: rgba(34, 211, 126, 0.25);
+        transform: translateY(-4px);
+      }
+
+      /* ── feature tab ── */
+      .feature-pill {
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+
+      .feature-pill:hover {
+        background: rgba(34, 211, 126, 0.1);
+        color: #22d37e;
+      }
+
+      .feature-pill.active {
+        background: rgba(34, 211, 126, 0.12);
+        color: #22d37e;
+        border-color: rgba(34, 211, 126, 0.3);
+      }
+
+      /* ── CTA input ── */
+      .cta-input {
+        transition: all 0.25s ease;
+      }
+
+      .cta-input:focus {
+        outline: none;
+        border-color: rgba(34, 211, 126, 0.6);
+        box-shadow: 0 0 0 3px rgba(34, 211, 126, 0.12);
+      }
+
+      /* ── badge ── */
+      .badge-popular {
+        background: linear-gradient(135deg, #22d37e, #10b96b);
+        color: #011c0f;
+      }
+
+      /* ── mobile nav ── */
+      #mobile-menu {
+        transition: all 0.3s ease;
+      }
+
+      /* ── scroll reveal ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <!-- ═══════════════════════════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════════════════════════ -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/80 border-b border-slate-800/50 transition-all duration-300"
+    >
+      <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5 flex-shrink-0">
+          <div
+            class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center glow-emerald-sm"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#011c0f"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+              <path d="M7 10h2l2 4 2-7 2 3h2" stroke="#011c0f" stroke-width="2" />
+            </svg>
+          </div>
+          <span class="text-white font-bold text-lg tracking-tight"
+            >Bill<span class="text-emerald-400">Buddy</span></span
+          >
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden md:flex items-center gap-7">
+          <li>
+            <a href="#features" class="nav-link text-slate-300 text-sm font-medium">Features</a>
+          </li>
+          <li>
+            <a href="#pricing" class="nav-link text-slate-300 text-sm font-medium">Pricing</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="nav-link text-slate-300 text-sm font-medium">Reviews</a>
+          </li>
+          <li><a href="#faq" class="nav-link text-slate-300 text-sm font-medium">FAQ</a></li>
+        </ul>
+
+        <!-- Nav CTA + mobile burger -->
+        <div class="flex items-center gap-3">
+          <a href="#" class="hidden sm:inline-block btn-ghost text-sm px-4 py-2">Log in</a>
+          <a href="#trial" class="btn-primary text-sm px-5 py-2.5">
+            <span>Start free trial</span>
+          </a>
+          <button
+            id="burger-btn"
+            class="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            aria-label="Menu"
+          >
+            <svg
+              id="burger-icon"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden border-t border-slate-800/60 bg-slate-950/95 px-5 py-4"
+      >
+        <ul class="flex flex-col gap-4">
+          <li>
+            <a
+              href="#features"
+              class="text-slate-300 text-sm font-medium hover:text-emerald-400 transition-colors"
+              onclick="closeMobile()"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="#pricing"
+              class="text-slate-300 text-sm font-medium hover:text-emerald-400 transition-colors"
+              onclick="closeMobile()"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="text-slate-300 text-sm font-medium hover:text-emerald-400 transition-colors"
+              onclick="closeMobile()"
+              >Reviews</a
+            >
+          </li>
+          <li>
+            <a
+              href="#faq"
+              class="text-slate-300 text-sm font-medium hover:text-emerald-400 transition-colors"
+              onclick="closeMobile()"
+              >FAQ</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════════════════ -->
+    <section
+      class="relative min-h-screen flex flex-col justify-center pt-16 pb-12 overflow-hidden grid-bg"
+    >
+      <!-- Radial vignette top-right -->
+      <div
+        class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full"
+        style="
+          background: radial-gradient(circle, rgba(34, 211, 126, 0.09) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+      <!-- Bottom left vignette -->
+      <div
+        class="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full"
+        style="
+          background: radial-gradient(circle, rgba(34, 211, 126, 0.06) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          <!-- Left: copy -->
+          <div class="text-center lg:text-left">
+            <!-- Eyebrow pill -->
+            <div
+              class="inline-flex items-center gap-2 bg-emerald-950/60 border border-emerald-800/50 rounded-full px-4 py-1.5 mb-8"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-slow"></span>
+              <span class="text-emerald-300 text-xs font-semibold tracking-widest uppercase"
+                >AI-Powered Invoicing</span
+              >
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight leading-[1.05] mb-6 text-white"
+            >
+              Stop chasing<br />
+              <span class="text-emerald-400 text-glow">invoices.</span><br />
+              Start getting paid.
+            </h1>
+
+            <p
+              class="text-slate-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
+            >
+              BillBuddy sends, follows up, and collects your invoices on autopilot. The average
+              freelancer recovers
+              <strong class="text-slate-200 font-semibold">$4,200/year</strong> in late payments
+              within the first month.
+            </p>
+
+            <!-- Dual CTA -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <a href="#trial" class="btn-primary text-base px-7 py-3.5 text-center">
+                <span>Start 14-day free trial →</span>
+              </a>
+              <a
+                href="#features"
+                class="btn-ghost text-base px-7 py-3.5 text-center inline-flex items-center justify-center gap-2"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="10 8 16 12 10 16 10 8" />
+                </svg>
+                See it in action
+              </a>
+            </div>
+
+            <!-- Micro-trust -->
+            <div class="mt-8 flex items-center gap-5 justify-center lg:justify-start">
+              <div class="flex -space-x-2">
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-slate-950 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-xs font-bold"
+                >
+                  J
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-slate-950 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-xs font-bold"
+                >
+                  M
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-slate-950 bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-xs font-bold"
+                >
+                  A
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-slate-950 bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-xs font-bold"
+                >
+                  R
+                </div>
+              </div>
+              <p class="text-slate-400 text-sm">
+                <span class="text-white font-semibold">12,400+</span> freelancers already getting
+                paid on time
+              </p>
+            </div>
+
+            <p class="mt-4 text-slate-600 text-xs">
+              No credit card required · Cancel anytime · 2-minute setup
+            </p>
+          </div>
+
+          <!-- Right: Product UI Mockup -->
+          <div class="relative">
+            <div
+              class="bg-slate-900 rounded-2xl border border-slate-800/80 shadow-2xl overflow-hidden"
+              style="
+                box-shadow:
+                  0 40px 80px -20px rgba(0, 0, 0, 0.8),
+                  0 0 0 1px rgba(255, 255, 255, 0.04);
+              "
+            >
+              <!-- Mac-style title bar -->
+              <div
+                class="bg-slate-950/80 px-4 py-3 flex items-center gap-2 border-b border-slate-800/60"
+              >
+                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/70"></div>
+                <div class="flex-1 text-center">
+                  <span class="text-slate-500 text-xs font-mono">billbuddy.app/dashboard</span>
+                </div>
+              </div>
+
+              <!-- Dashboard body -->
+              <div class="p-5">
+                <!-- Top stats row -->
+                <div class="grid grid-cols-3 gap-3 mb-5">
+                  <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+                    <p class="text-slate-500 text-xs mb-1">Sent</p>
+                    <p class="text-white font-bold text-xl">$24,500</p>
+                    <p class="text-emerald-400 text-xs mt-0.5 flex items-center gap-1">
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      >
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                      </svg>
+                      +18%
+                    </p>
+                  </div>
+                  <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+                    <p class="text-slate-500 text-xs mb-1">Collected</p>
+                    <p class="text-white font-bold text-xl">$19,200</p>
+                    <p class="text-emerald-400 text-xs mt-0.5 flex items-center gap-1">
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      >
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                      </svg>
+                      +31%
+                    </p>
+                  </div>
+                  <div class="bg-slate-800/60 rounded-xl p-3 border border-emerald-900/40">
+                    <p class="text-slate-500 text-xs mb-1">Overdue</p>
+                    <p class="text-emerald-400 font-bold text-xl">$0</p>
+                    <p class="text-slate-500 text-xs mt-0.5">Auto-collected</p>
+                  </div>
+                </div>
+
+                <!-- Revenue bar chart -->
+                <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/30 mb-4">
+                  <div class="flex items-center justify-between mb-3">
+                    <p class="text-slate-300 text-xs font-semibold">Revenue — Last 6 months</p>
+                    <span class="text-emerald-400 text-xs font-mono">+24% YoY</span>
+                  </div>
+                  <div class="flex items-end gap-2 h-24">
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div class="bar-fill bg-slate-700 rounded-t-sm" style="height: 45%"></div>
+                      <p class="text-slate-600 text-[10px] text-center">Jan</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div class="bar-fill bg-slate-700 rounded-t-sm" style="height: 60%"></div>
+                      <p class="text-slate-600 text-[10px] text-center">Feb</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar-fill bg-emerald-600/50 rounded-t-sm"
+                        style="height: 52%"
+                      ></div>
+                      <p class="text-slate-600 text-[10px] text-center">Mar</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar-fill bg-emerald-500/60 rounded-t-sm"
+                        style="height: 73%"
+                      ></div>
+                      <p class="text-slate-600 text-[10px] text-center">Apr</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar-fill bg-emerald-400/70 rounded-t-sm"
+                        style="height: 85%"
+                      ></div>
+                      <p class="text-slate-600 text-[10px] text-center">May</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar-fill bg-emerald-400 rounded-t-sm glow-emerald"
+                        style="height: 95%"
+                      ></div>
+                      <p class="text-slate-500 text-[10px] text-center font-semibold">Jun</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Invoice rows -->
+                <div class="bg-slate-800/40 rounded-xl border border-slate-700/30 overflow-hidden">
+                  <div
+                    class="px-4 py-2.5 border-b border-slate-700/40 flex items-center justify-between"
+                  >
+                    <p class="text-slate-300 text-xs font-semibold">Recent Invoices</p>
+                    <span
+                      class="bg-emerald-950/80 text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-900/60"
+                      >Auto-follow-up ON</span
+                    >
+                  </div>
+                  <div class="divide-y divide-slate-800/50">
+                    <!-- Row -->
+                    <div class="invoice-row flex items-center px-4 py-2.5 gap-3">
+                      <div
+                        class="w-7 h-7 rounded-lg bg-blue-900/60 border border-blue-800/40 flex items-center justify-center text-xs font-bold text-blue-300"
+                      >
+                        AC
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-slate-200 text-xs font-medium truncate">Acme Corp</p>
+                        <p class="text-slate-500 text-[10px]">INV-2024-087 · Due Jun 15</p>
+                      </div>
+                      <p class="text-slate-200 text-xs font-semibold">$3,400</p>
+                      <span
+                        class="bg-emerald-950/60 text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-900/50"
+                        >Paid</span
+                      >
+                    </div>
+                    <!-- Row -->
+                    <div class="invoice-row flex items-center px-4 py-2.5 gap-3">
+                      <div
+                        class="w-7 h-7 rounded-lg bg-purple-900/60 border border-purple-800/40 flex items-center justify-center text-xs font-bold text-purple-300"
+                      >
+                        NX
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-slate-200 text-xs font-medium truncate">Nexus Studio</p>
+                        <p class="text-slate-500 text-[10px]">INV-2024-088 · Due Jun 18</p>
+                      </div>
+                      <p class="text-slate-200 text-xs font-semibold">$1,800</p>
+                      <span
+                        class="bg-yellow-950/60 text-yellow-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-yellow-900/50"
+                        >Nudged</span
+                      >
+                    </div>
+                    <!-- Row -->
+                    <div class="invoice-row flex items-center px-4 py-2.5 gap-3">
+                      <div
+                        class="w-7 h-7 rounded-lg bg-orange-900/60 border border-orange-800/40 flex items-center justify-center text-xs font-bold text-orange-300"
+                      >
+                        VB
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-slate-200 text-xs font-medium truncate">Vibe Brand Co.</p>
+                        <p class="text-slate-500 text-[10px]">INV-2024-089 · Due Jun 22</p>
+                      </div>
+                      <p class="text-slate-200 text-xs font-semibold">$950</p>
+                      <span
+                        class="bg-slate-800/80 text-slate-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-slate-700/50"
+                        >Sent</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating notification pill -->
+            <div
+              class="absolute -top-4 -right-3 sm:-right-6 bg-slate-900 border border-emerald-800/60 rounded-xl px-3 py-2.5 shadow-xl glow-emerald-sm animate-fade-up flex items-center gap-2"
+            >
+              <div
+                class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse-slow flex-shrink-0"
+              ></div>
+              <div>
+                <p class="text-white text-xs font-semibold">Payment received</p>
+                <p class="text-emerald-400 text-xs">$3,400 from Acme Corp</p>
+              </div>
+            </div>
+
+            <!-- Bottom floating pill -->
+            <div
+              class="absolute -bottom-4 -left-3 sm:-left-6 bg-slate-900 border border-slate-700/60 rounded-xl px-3 py-2.5 shadow-xl flex items-center gap-2"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#22d37e"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                />
+              </svg>
+              <p class="text-slate-300 text-xs font-medium">Auto-reminder sent · Nexus Studio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SOCIAL PROOF STRIP — Stats + Marquee
+═══════════════════════════════════════════════════════════ -->
+    <section class="py-16 border-y border-slate-800/60 bg-slate-900/30">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <!-- Metric counters -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div
+            class="stat-card bg-slate-900/60 border border-slate-800/60 rounded-xl p-5 text-center transition-all duration-300"
+          >
+            <p class="text-3xl font-black text-white tracking-tight">
+              12,400<span class="text-emerald-400">+</span>
+            </p>
+            <p class="text-slate-500 text-sm mt-1">Freelancers & agencies</p>
+          </div>
+          <div
+            class="stat-card bg-slate-900/60 border border-slate-800/60 rounded-xl p-5 text-center transition-all duration-300"
+          >
+            <p class="text-3xl font-black text-white tracking-tight">
+              $218<span class="text-emerald-400">M</span>
+            </p>
+            <p class="text-slate-500 text-sm mt-1">Invoices processed</p>
+          </div>
+          <div
+            class="stat-card bg-slate-900/60 border border-slate-800/60 rounded-xl p-5 text-center transition-all duration-300"
+          >
+            <p class="text-3xl font-black text-white tracking-tight">
+              97<span class="text-emerald-400">%</span>
+            </p>
+            <p class="text-slate-500 text-sm mt-1">On-time payment rate</p>
+          </div>
+          <div
+            class="stat-card bg-slate-900/60 border border-slate-800/60 rounded-xl p-5 text-center transition-all duration-300"
+          >
+            <p class="text-3xl font-black text-white tracking-tight">
+              4.9<span class="text-emerald-400">★</span>
+            </p>
+            <p class="text-slate-500 text-sm mt-1">Average user rating</p>
+          </div>
+        </div>
+
+        <!-- Marquee logos -->
+        <p class="text-center text-slate-600 text-xs font-semibold tracking-widest uppercase mb-6">
+          Trusted by teams at
+        </p>
+        <div class="marquee-clip overflow-hidden">
+          <div class="flex animate-marquee gap-10 w-max">
+            <!-- First set -->
+            <div class="flex gap-10 items-center">
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Stripe</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Notion</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Vercel</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Linear</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Figma</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Shopify</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Loom</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Webflow</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Railway</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Framer</span
+              >
+              <span class="text-slate-600">·</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex gap-10 items-center">
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Stripe</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Notion</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Vercel</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Linear</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Figma</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Shopify</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Loom</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Webflow</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Railway</span
+              >
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-500 font-bold text-lg tracking-tight whitespace-nowrap"
+                >Framer</span
+              >
+              <span class="text-slate-600">·</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     PAS FRAMEWORK — Pain → Solution
+═══════════════════════════════════════════════════════════ -->
+    <section id="pain" class="py-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-14 reveal">
+          <p class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            The Problem · The Fix
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
+            Invoicing wasn't supposed to be<br class="hidden sm:block" />
+            your second job.
+          </h2>
+          <p class="text-slate-400 text-lg max-w-xl mx-auto">
+            Most freelancers spend 6+ hours per month just on payment admin. Here's where they bleed
+            time — and how BillBuddy seals the wound.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Pain 1 -->
+          <div class="pain-card bg-slate-900/60 border border-slate-800/60 rounded-2xl p-6 reveal">
+            <div
+              class="w-11 h-11 rounded-xl bg-red-950/60 border border-red-900/40 flex items-center justify-center mb-5"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f87171"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">Clients forget. You chase.</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+              Late invoices stack up. You write awkward follow-up emails at 11pm hoping not to
+              damage the relationship.
+            </p>
+            <div class="border-t border-slate-800/60 pt-5">
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <p class="text-slate-300 text-sm font-medium">
+                  BillBuddy sends reminders automatically
+                </p>
+              </div>
+              <p class="text-slate-500 text-xs ml-7">
+                Polite, on-brand sequences that get paid 3× faster — without you writing a word.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pain 2 -->
+          <div
+            class="pain-card bg-slate-900/60 border border-slate-800/60 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.1s"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-orange-950/60 border border-orange-900/40 flex items-center justify-center mb-5"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fb923c"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">Invoice templates feel like homework.</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+              You spend 30 minutes reformatting a PDF, adding your logo, calculating tax — every
+              single time a project ends.
+            </p>
+            <div class="border-t border-slate-800/60 pt-5">
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <p class="text-slate-300 text-sm font-medium">One-click invoice from any project</p>
+              </div>
+              <p class="text-slate-500 text-xs ml-7">
+                Auto-fills client info, calculates tax, applies your brand. Done in under 15
+                seconds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pain 3 -->
+          <div
+            class="pain-card bg-slate-900/60 border border-slate-800/60 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-yellow-950/60 border border-yellow-900/40 flex items-center justify-center mb-5"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">
+              Cash flow is a mystery until it's a crisis.
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+              You don't know what's outstanding, what's coming in, or why last month felt so slow
+              until it's already too late.
+            </p>
+            <div class="border-t border-slate-800/60 pt-5">
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <p class="text-slate-300 text-sm font-medium">Live cash flow forecasting</p>
+              </div>
+              <p class="text-slate-500 text-xs ml-7">
+                See exactly what's expected this week, this month, and next quarter — at a glance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     FEATURE DEEP DIVE — Zebra Layout
+═══════════════════════════════════════════════════════════ -->
+    <section id="features" class="py-24 bg-slate-900/20">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-16 reveal">
+          <p class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            Features
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Everything you need to run<br class="hidden sm:block" />
+            a tight billing operation.
+          </h2>
+        </div>
+
+        <!-- Feature 1: Smart Invoicing — UI left, text right -->
+        <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-24 reveal">
+          <!-- UI Mockup: Invoice builder -->
+          <div
+            class="feature-card bg-slate-900 border border-slate-800/70 rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <div
+              class="bg-slate-950/60 px-4 py-3 flex items-center gap-2 border-b border-slate-800/60"
+            >
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/60"></div>
+              <span class="text-slate-500 text-xs ml-2">New Invoice</span>
+            </div>
+            <div class="p-5 space-y-3">
+              <div class="flex gap-3">
+                <div class="flex-1">
+                  <label class="text-slate-500 text-xs mb-1 block">Client</label>
+                  <div
+                    class="bg-slate-800/60 border border-slate-700/40 rounded-lg px-3 py-2 text-slate-200 text-sm flex items-center justify-between"
+                  >
+                    <span>Acme Corporation</span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#4d6480"
+                      stroke-width="2"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="w-32">
+                  <label class="text-slate-500 text-xs mb-1 block">Due date</label>
+                  <div
+                    class="bg-slate-800/60 border border-slate-700/40 rounded-lg px-3 py-2 text-slate-200 text-sm"
+                  >
+                    Jun 30
+                  </div>
+                </div>
+              </div>
+              <!-- Line items -->
+              <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700/30">
+                <div
+                  class="grid grid-cols-12 text-slate-500 text-xs px-4 py-2 border-b border-slate-700/30"
+                >
+                  <span class="col-span-5">Description</span>
+                  <span class="col-span-2 text-right">Qty</span>
+                  <span class="col-span-2 text-right">Rate</span>
+                  <span class="col-span-3 text-right">Amount</span>
+                </div>
+                <div
+                  class="grid grid-cols-12 text-slate-300 text-xs px-4 py-2.5 border-b border-slate-800/40"
+                >
+                  <span class="col-span-5 truncate">Web Design (homepage)</span>
+                  <span class="col-span-2 text-right text-slate-500">1</span>
+                  <span class="col-span-2 text-right text-slate-500">$2,400</span>
+                  <span class="col-span-3 text-right font-semibold">$2,400</span>
+                </div>
+                <div class="grid grid-cols-12 text-slate-300 text-xs px-4 py-2.5">
+                  <span class="col-span-5 truncate">Dev handoff & assets</span>
+                  <span class="col-span-2 text-right text-slate-500">1</span>
+                  <span class="col-span-2 text-right text-slate-500">$800</span>
+                  <span class="col-span-3 text-right font-semibold">$800</span>
+                </div>
+              </div>
+              <!-- Totals -->
+              <div class="flex justify-end">
+                <div
+                  class="bg-slate-800/40 rounded-xl border border-slate-700/30 p-3 w-44 space-y-1.5"
+                >
+                  <div class="flex justify-between text-slate-500 text-xs">
+                    <span>Subtotal</span><span>$3,200</span>
+                  </div>
+                  <div class="flex justify-between text-slate-500 text-xs">
+                    <span>Tax (8%)</span><span>$256</span>
+                  </div>
+                  <div
+                    class="flex justify-between text-white text-sm font-bold border-t border-slate-700/40 pt-1.5 mt-1.5"
+                  >
+                    <span>Total</span><span class="text-emerald-400">$3,456</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Send button -->
+              <button class="btn-primary w-full py-2.5 text-sm text-center">
+                <span>Send Invoice · $3,456</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div>
+            <div
+              class="inline-flex items-center gap-2 bg-emerald-950/50 border border-emerald-900/40 rounded-full px-3 py-1 mb-5"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#22d37e"
+                stroke-width="2"
+              >
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                <polyline points="13 2 13 9 20 9" />
+              </svg>
+              <span class="text-emerald-400 text-xs font-semibold">Smart Invoicing</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black tracking-tight text-white mb-4">
+              From project complete to invoice sent — in 15 seconds flat.
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              BillBuddy pulls your client details, past rates, and project scope automatically.
+              Adjust any line item, add your logo, and hit send. No reformatting. No copy-paste from
+              Notion. No tax calculator tab.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Multi-currency with automatic FX conversion
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Tax rules auto-applied by client region
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Branded PDF delivered to client instantly
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Stripe + PayPal pay link embedded in every invoice
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 2: Autopilot Reminders — text left, UI right -->
+        <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-24 reveal">
+          <!-- Text -->
+          <div class="order-2 lg:order-1">
+            <div
+              class="inline-flex items-center gap-2 bg-emerald-950/50 border border-emerald-900/40 rounded-full px-3 py-1 mb-5"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#22d37e"
+                stroke-width="2"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <span class="text-emerald-400 text-xs font-semibold">Autopilot Follow-up</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black tracking-tight text-white mb-4">
+              Your invoices follow up on themselves. Professionally.
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              Set your reminder schedule once. BillBuddy handles the awkward "just checking in"
+              emails so you don't have to. Your client relationship stays intact. Your cash flow
+              doesn't.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Configurable sequence: Day 3, 7, 14, 21
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Escalating tone: friendly → firm → final notice
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Auto-stops the moment they pay
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Customize every email in your own voice
+              </li>
+            </ul>
+          </div>
+
+          <!-- UI Mockup: reminder sequence -->
+          <div
+            class="feature-card bg-slate-900 border border-slate-800/70 rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2"
+          >
+            <div
+              class="bg-slate-950/60 px-4 py-3 flex items-center gap-2 border-b border-slate-800/60"
+            >
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/60"></div>
+              <span class="text-slate-500 text-xs ml-2">Reminder Sequence — INV-088</span>
+            </div>
+            <div class="p-5 space-y-4">
+              <!-- Timeline steps -->
+              <div class="space-y-0">
+                <!-- Step 1 -->
+                <div class="flex gap-4 relative">
+                  <div class="flex flex-col items-center">
+                    <div
+                      class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 z-10"
+                    >
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#011c0f"
+                        stroke-width="2.5"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <div class="w-px flex-1 bg-slate-700/60 my-1"></div>
+                  </div>
+                  <div class="pb-5 flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-slate-200 text-sm font-semibold">Invoice sent</p>
+                      <span class="text-slate-600 text-xs">Jun 10</span>
+                    </div>
+                    <p class="text-slate-500 text-xs">
+                      Branded PDF + Stripe pay link delivered to james@nexusstudio.co
+                    </p>
+                    <span
+                      class="inline-block mt-2 text-emerald-400 text-[10px] bg-emerald-950/60 border border-emerald-900/40 px-2 py-0.5 rounded-full"
+                      >Delivered · Opened 3x</span
+                    >
+                  </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex gap-4 relative">
+                  <div class="flex flex-col items-center">
+                    <div
+                      class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 z-10"
+                    >
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#011c0f"
+                        stroke-width="2.5"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <div class="w-px flex-1 bg-slate-700/60 my-1"></div>
+                  </div>
+                  <div class="pb-5 flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-slate-200 text-sm font-semibold">Friendly reminder</p>
+                      <span class="text-slate-600 text-xs">Jun 13 (Day 3)</span>
+                    </div>
+                    <p class="text-slate-500 text-xs">
+                      "Hey James — just a quick nudge on the invoice for the Nexus rebrand..."
+                    </p>
+                    <span
+                      class="inline-block mt-2 text-yellow-400 text-[10px] bg-yellow-950/60 border border-yellow-900/40 px-2 py-0.5 rounded-full"
+                      >Opened · No reply</span
+                    >
+                  </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex gap-4 relative">
+                  <div class="flex flex-col items-center">
+                    <div
+                      class="w-8 h-8 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center flex-shrink-0 z-10"
+                    >
+                      <span class="text-slate-400 text-xs font-bold">3</span>
+                    </div>
+                    <div class="w-px flex-1 bg-slate-800/60 my-1"></div>
+                  </div>
+                  <div class="pb-5 flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-slate-400 text-sm font-semibold">Follow-up #2</p>
+                      <span class="text-slate-700 text-xs">Jun 17 (Day 7)</span>
+                    </div>
+                    <p class="text-slate-600 text-xs">
+                      Scheduled · "Hi James, just following up on INV-088..."
+                    </p>
+                    <span
+                      class="inline-block mt-2 text-slate-600 text-[10px] bg-slate-800/60 border border-slate-700/40 px-2 py-0.5 rounded-full"
+                      >Scheduled</span
+                    >
+                  </div>
+                </div>
+                <!-- Step 4: Paid indicator -->
+                <div class="flex gap-4">
+                  <div
+                    class="w-8 h-8 rounded-full bg-slate-800 border border-dashed border-slate-700 flex items-center justify-center flex-shrink-0"
+                  >
+                    <span class="text-slate-600 text-xs font-bold">4</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-slate-600 text-sm">
+                      Final notice
+                      <span class="text-slate-700 text-xs">(if needed — usually isn't)</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-emerald-950/40 border border-emerald-900/40 rounded-xl p-3 flex items-center gap-3"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <p class="text-emerald-300 text-xs font-medium">
+                  Auto-stops immediately upon payment. No awkward "oops" emails.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Cash Flow Intelligence — UI left, text right -->
+        <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center reveal">
+          <!-- UI Mockup: forecast chart -->
+          <div
+            class="feature-card bg-slate-900 border border-slate-800/70 rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <div
+              class="bg-slate-950/60 px-4 py-3 flex items-center gap-2 border-b border-slate-800/60"
+            >
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/60"></div>
+              <span class="text-slate-500 text-xs ml-2">Cash Flow Forecast</span>
+            </div>
+            <div class="p-5">
+              <div class="grid grid-cols-3 gap-3 mb-5">
+                <div class="bg-slate-800/50 rounded-xl p-3 text-center border border-slate-700/30">
+                  <p class="text-slate-500 text-xs mb-1">This week</p>
+                  <p class="text-white font-bold">$4,200</p>
+                  <p class="text-emerald-400 text-[10px] mt-0.5">Expected</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-xl p-3 text-center border border-slate-700/30">
+                  <p class="text-slate-500 text-xs mb-1">This month</p>
+                  <p class="text-white font-bold">$11,800</p>
+                  <p class="text-emerald-400 text-[10px] mt-0.5">Forecasted</p>
+                </div>
+                <div
+                  class="bg-slate-800/50 rounded-xl p-3 text-center border border-emerald-900/30"
+                >
+                  <p class="text-slate-500 text-xs mb-1">Overdue</p>
+                  <p class="text-emerald-400 font-bold">$0</p>
+                  <p class="text-slate-600 text-[10px] mt-0.5">All clear</p>
+                </div>
+              </div>
+
+              <!-- Forecast area chart simulation -->
+              <div class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/20">
+                <div class="flex items-center justify-between mb-3">
+                  <p class="text-slate-300 text-xs font-semibold">90-Day Projection</p>
+                  <div class="flex gap-3">
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/70"></div>
+                      <span class="text-slate-500 text-[10px]">Collected</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div
+                        class="w-2.5 h-2.5 rounded-sm bg-slate-600 border border-dashed border-slate-500"
+                      ></div>
+                      <span class="text-slate-500 text-[10px]">Forecast</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative h-28">
+                  <!-- SVG area chart approximation -->
+                  <svg viewBox="0 0 300 90" class="w-full h-full" preserveAspectRatio="none">
+                    <!-- Area fill: collected -->
+                    <defs>
+                      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#22d37e" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#22d37e" stop-opacity="0.02" />
+                      </linearGradient>
+                      <linearGradient id="forecastGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#4d6480" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#4d6480" stop-opacity="0.02" />
+                      </linearGradient>
+                    </defs>
+                    <!-- Collected area -->
+                    <path
+                      d="M0,70 C20,65 40,55 60,48 C80,42 100,50 120,38 C140,26 160,32 180,20 L180,90 L0,90 Z"
+                      fill="url(#areaGrad)"
+                    />
+                    <!-- Forecast area (dashed) -->
+                    <path
+                      d="M180,20 C200,15 220,22 240,12 C260,4 280,8 300,5 L300,90 L180,90 Z"
+                      fill="url(#forecastGrad)"
+                    />
+                    <!-- Collected line -->
+                    <path
+                      d="M0,70 C20,65 40,55 60,48 C80,42 100,50 120,38 C140,26 160,32 180,20"
+                      fill="none"
+                      stroke="#22d37e"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <!-- Forecast dashed line -->
+                    <path
+                      d="M180,20 C200,15 220,22 240,12 C260,4 280,8 300,5"
+                      fill="none"
+                      stroke="#4d6480"
+                      stroke-width="1.5"
+                      stroke-dasharray="5,4"
+                      stroke-linecap="round"
+                    />
+                    <!-- Divider -->
+                    <line
+                      x1="180"
+                      y1="0"
+                      x2="180"
+                      y2="90"
+                      stroke="#374a65"
+                      stroke-width="1"
+                      stroke-dasharray="3,3"
+                    />
+                    <!-- Today label -->
+                    <text x="183" y="10" fill="#4d6480" font-size="8" font-family="Inter">
+                      Today
+                    </text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- At-risk alert -->
+              <div
+                class="mt-3 bg-yellow-950/30 border border-yellow-900/40 rounded-xl p-3 flex items-start gap-2.5"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  class="mt-0.5 flex-shrink-0"
+                >
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                <div>
+                  <p class="text-yellow-300 text-xs font-semibold">
+                    1 invoice approaching 7 days late
+                  </p>
+                  <p class="text-yellow-600 text-[10px]">
+                    Nexus Studio · $1,800 · Reminder scheduled for today
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div>
+            <div
+              class="inline-flex items-center gap-2 bg-emerald-950/50 border border-emerald-900/40 rounded-full px-3 py-1 mb-5"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#22d37e"
+                stroke-width="2"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+              <span class="text-emerald-400 text-xs font-semibold">Cash Flow Intelligence</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black tracking-tight text-white mb-4">
+              Know exactly what's coming in. Never be surprised again.
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              BillBuddy forecasts your revenue 90 days out based on active invoices, client payment
+              history, and outstanding projects. Your next dry spell is visible before it arrives.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Client health scores (who always pays late)
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Alerting before an invoice becomes a problem
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Export to CSV or share with your accountant
+              </li>
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22d37e"
+                    stroke-width="3"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                Real-time Slack / email digest every Monday
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════════ -->
+    <section id="testimonials" class="py-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-14 reveal">
+          <p class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            Customer stories
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Freelancers who stopped chasing<br class="hidden sm:block" />
+            and started cashing.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- T1 -->
+          <div class="testimonial-card bg-slate-900/70 rounded-2xl p-6 reveal">
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-5 text-sm">
+              "I used to spend Sunday evenings writing 'just following up' emails. BillBuddy killed
+              that ritual. I collected $6,200 in outstanding invoices in the first two weeks. That's
+              not a typo."
+            </p>
+            <div class="flex items-center gap-3 border-t border-slate-800/60 pt-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                JH
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Jake Hoffman</p>
+                <p class="text-slate-500 text-xs">Brand Designer · Chicago, IL</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-950/60 border border-emerald-900/40 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- T2 — taller card for masonry feel -->
+          <div
+            class="testimonial-card bg-slate-900/70 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.1s"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-4 text-sm">
+              "We run a 12-person creative agency and billing was genuinely one of our biggest
+              operational headaches. Three people were half-managing invoices. BillBuddy replaced
+              that with zero people."
+            </p>
+            <p class="text-slate-400 text-sm italic">
+              "The client health scores alone are worth the Pro subscription. We dropped two chronic
+              late-payers after seeing the data — our average collection time went from 28 days to
+              6."
+            </p>
+            <div class="flex items-center gap-3 border-t border-slate-800/60 pt-4 mt-5">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                MA
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Maria Albrecht</p>
+                <p class="text-slate-500 text-xs">Founder, Solstice Creative · Berlin</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-950/60 border border-emerald-900/40 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- T3 -->
+          <div
+            class="testimonial-card bg-slate-900/70 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.2s"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-5 text-sm">
+              "Setup took about 4 minutes. Literally. Connected Stripe, imported my client list from
+              a CSV, and sent my first automated invoice before I finished my coffee. The ROI was
+              immediate."
+            </p>
+            <div class="flex items-center gap-3 border-t border-slate-800/60 pt-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                RL
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Rosa Lin</p>
+                <p class="text-slate-500 text-xs">Copywriter & Consultant · NYC</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-950/60 border border-emerald-900/40 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- T4 -->
+          <div
+            class="testimonial-card bg-slate-900/70 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.3s"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbf24" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-5 text-sm">
+              "Switching from a spreadsheet to BillBuddy felt like going from a paper map to GPS.
+              The time savings alone pay for 6 months of the subscription every single week."
+            </p>
+            <div class="flex items-center gap-3 border-t border-slate-800/60 pt-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                TK
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Tyler Kim</p>
+                <p class="text-slate-500 text-xs">Motion Designer · Los Angeles</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-950/60 border border-emerald-900/40 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- T5 — highlighted -->
+          <div
+            class="testimonial-card bg-emerald-950/30 border border-emerald-900/40 rounded-2xl p-6 md:col-span-2 lg:col-span-1 reveal"
+            style="transition-delay: 0.4s"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-emerald-100 leading-relaxed mb-5 text-sm font-medium">
+              "I'm a one-person dev shop. Before BillBuddy, I had $14,000 sitting in unpaid invoices
+              at any given time — just forgotten. After 90 days with BillBuddy, that number is
+              consistently under $500. It changed how I think about my business finances."
+            </p>
+            <div class="flex items-center gap-3 border-t border-emerald-900/40 pt-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                DW
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Dev Waite</p>
+                <p class="text-emerald-600 text-xs">Fullstack Engineer · Austin, TX</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-900/40 border border-emerald-800/50 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- T6 -->
+          <div
+            class="testimonial-card bg-slate-900/70 rounded-2xl p-6 reveal"
+            style="transition-delay: 0.5s"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-5 text-sm">
+              "My accountant thought I'd hired a bookkeeper. Nope — just BillBuddy. Tax season was
+              seamless. I had every invoice, payment, and statement ready to export in five
+              minutes."
+            </p>
+            <div class="flex items-center gap-3 border-t border-slate-800/60 pt-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center font-bold text-sm flex-shrink-0"
+              >
+                SP
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Samira Patel</p>
+                <p class="text-slate-500 text-xs">SEO Consultant · London, UK</p>
+              </div>
+              <div
+                class="ml-auto flex items-center gap-1 bg-emerald-950/60 border border-emerald-900/40 rounded-full px-2 py-1"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#22d37e" stroke="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="text-emerald-400 text-[10px] font-semibold">Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     PRICING SECTION
+═══════════════════════════════════════════════════════════ -->
+    <section id="pricing" class="py-24 bg-slate-900/20">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-12 reveal">
+          <p class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            Pricing
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
+            Pay for what you use.<br class="hidden sm:block" />
+            Stop when you don't.
+          </h2>
+          <p class="text-slate-400 mb-8">All plans start free. No credit card needed to try.</p>
+
+          <!-- Toggle -->
+          <div
+            class="inline-flex items-center gap-4 bg-slate-900/80 border border-slate-800/60 rounded-xl p-1.5"
+          >
+            <button
+              id="toggle-monthly"
+              onclick="setPricing('monthly')"
+              class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-250 bg-slate-800 text-white"
+            >
+              Monthly
+            </button>
+            <button
+              id="toggle-annual"
+              onclick="setPricing('annual')"
+              class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-250 text-slate-400 hover:text-white"
+            >
+              Annual
+              <span
+                class="ml-1.5 bg-emerald-500/20 text-emerald-400 text-xs px-1.5 py-0.5 rounded-full border border-emerald-800/50"
+                >−20%</span
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Free / Starter -->
+          <div class="price-card bg-slate-900/60 border border-slate-800/60 rounded-2xl p-7 reveal">
+            <p class="text-slate-400 text-sm font-semibold mb-2">Starter</p>
+            <div class="flex items-end gap-1 mb-1">
+              <p class="text-white text-4xl font-black tracking-tight" id="price-starter">$0</p>
+              <p class="text-slate-500 text-sm mb-1.5">/mo</p>
+            </div>
+            <p class="text-slate-600 text-xs mb-6">Forever free. No catch.</p>
+            <a href="#trial" class="btn-ghost w-full py-3 text-sm text-center block mb-7"
+              >Get started free</a
+            >
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Up to 5 active invoices
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >3 clients
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Basic reminder sequence
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Stripe & PayPal payments
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-600 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#374a65"
+                  stroke-width="2"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Cash flow forecasting
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-600 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#374a65"
+                  stroke-width="2"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Client health scores
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pro — Most Popular -->
+          <div
+            class="price-card relative bg-slate-900 border-2 border-emerald-500/40 rounded-2xl p-7 glow-emerald reveal"
+            style="transition-delay: 0.1s"
+          >
+            <!-- Popular badge -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+              <span class="badge-popular text-xs font-bold px-3 py-1 rounded-full"
+                >Most Popular</span
+              >
+            </div>
+            <p class="text-emerald-400 text-sm font-semibold mb-2 mt-2">Pro</p>
+            <div class="flex items-end gap-1 mb-1">
+              <p class="text-white text-4xl font-black tracking-tight" id="price-pro">$29</p>
+              <p class="text-slate-500 text-sm mb-1.5">/mo</p>
+            </div>
+            <p class="text-slate-600 text-xs mb-6" id="billing-note-pro">Billed monthly</p>
+            <a href="#trial" class="btn-primary w-full py-3 text-sm text-center block mb-7">
+              <span>Start 14-day free trial</span>
+            </a>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Unlimited invoices
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Unlimited clients
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Custom reminder sequences
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Cash flow forecasting
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Client health scores
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Custom branding & PDF templates
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-300 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Weekly digest & Slack alerts
+              </li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div
+            class="price-card bg-slate-900/60 border border-slate-800/60 rounded-2xl p-7 reveal"
+            style="transition-delay: 0.2s"
+          >
+            <p class="text-slate-400 text-sm font-semibold mb-2">Agency</p>
+            <div class="flex items-end gap-1 mb-1">
+              <p class="text-white text-4xl font-black tracking-tight" id="price-agency">$79</p>
+              <p class="text-slate-500 text-sm mb-1.5">/mo</p>
+            </div>
+            <p class="text-slate-600 text-xs mb-6" id="billing-note-agency">Billed monthly</p>
+            <a
+              href="mailto:team@billbuddy.app"
+              class="btn-ghost w-full py-3 text-sm text-center block mb-7"
+              >Contact sales</a
+            >
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Everything in Pro
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Up to 15 team members
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Role-based permissions
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Priority support (2hr SLA)
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >API access & webhooks
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-400 text-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22d37e"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >QuickBooks & Xero integration
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom note -->
+        <p class="text-center text-slate-600 text-sm mt-8">
+          All prices in USD. Cancel or change plans at any time. Need something custom?
+          <a
+            href="mailto:team@billbuddy.app"
+            class="text-emerald-500 hover:text-emerald-400 transition-colors"
+            >Talk to us →</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     FAQ ACCORDION
+═══════════════════════════════════════════════════════════ -->
+    <section id="faq" class="py-24">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-12 reveal">
+          <p class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3">FAQ</p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Before you ask your accountant,<br class="hidden sm:block" />
+            ask us.
+          </h2>
+        </div>
+
+        <div class="space-y-3 reveal">
+          <!-- FAQ 1 -->
+          <div
+            class="faq-item bg-slate-900/60 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:border-slate-700/80"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+              onclick="toggleFaq(this)"
+            >
+              <span class="text-white font-semibold text-sm sm:text-base pr-4"
+                >Does BillBuddy actually stop reminders once a client pays?</span
+              >
+              <svg
+                class="faq-icon w-5 h-5 text-slate-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="faq-body px-6 pb-5">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Yes, instantly. BillBuddy monitors your connected payment accounts (Stripe, PayPal,
+                bank) in real time. The moment a payment clears, the entire reminder sequence for
+                that invoice is cancelled — including any emails already queued. No "oops, you
+                already paid" follow-ups.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div
+            class="faq-item bg-slate-900/60 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:border-slate-700/80"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+              onclick="toggleFaq(this)"
+            >
+              <span class="text-white font-semibold text-sm sm:text-base pr-4"
+                >Will my clients know I'm using automation software?</span
+              >
+              <svg
+                class="faq-icon w-5 h-5 text-slate-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="faq-body px-6 pb-5">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Not unless you tell them. Emails come from your own email address, carry your
+                branding, and are written in your voice. There's no "sent via BillBuddy" footer
+                unless you want one. Most clients respond thinking you wrote the email personally.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div
+            class="faq-item bg-slate-900/60 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:border-slate-700/80"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+              onclick="toggleFaq(this)"
+            >
+              <span class="text-white font-semibold text-sm sm:text-base pr-4"
+                >How long does setup actually take?</span
+              >
+              <svg
+                class="faq-icon w-5 h-5 text-slate-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="faq-body px-6 pb-5">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Under 5 minutes for most people. Connect Stripe (1 click), import your clients (CSV
+                or manual), customize your first invoice template, and send. Our onboarding wizard
+                gets you to your first sent invoice in one session. No technical skills required.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div
+            class="faq-item bg-slate-900/60 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:border-slate-700/80"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+              onclick="toggleFaq(this)"
+            >
+              <span class="text-white font-semibold text-sm sm:text-base pr-4"
+                >What payment methods can my clients use?</span
+              >
+              <svg
+                class="faq-icon w-5 h-5 text-slate-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="faq-body px-6 pb-5">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Every invoice includes an embedded pay link supporting credit/debit cards (Stripe),
+                PayPal, ACH bank transfers, and Apple Pay / Google Pay. International clients can
+                pay in their local currency. You receive funds in your currency automatically, with
+                BillBuddy handling the FX conversion.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div
+            class="faq-item bg-slate-900/60 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:border-slate-700/80"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+              onclick="toggleFaq(this)"
+            >
+              <span class="text-white font-semibold text-sm sm:text-base pr-4"
+                >What happens to my data if I cancel?</span
+              >
+              <svg
+                class="faq-icon w-5 h-5 text-slate-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="faq-body px-6 pb-5">
+              <p class="text-slate-400 text-sm leading-relaxed">
+                You own your data, full stop. On cancellation you can export every invoice, client
+                record, and payment in CSV or PDF format. We retain your data for 90 days after
+                cancellation so you can recover anything. After that it's permanently deleted from
+                our servers — no backups, no upsells.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     FINAL URGENCY CTA
+═══════════════════════════════════════════════════════════ -->
+    <section id="trial" class="py-24 relative overflow-hidden">
+      <!-- Background accent -->
+      <div class="absolute inset-0 grid-bg opacity-50"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full"
+        style="
+          background: radial-gradient(ellipse, rgba(34, 211, 126, 0.08) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+
+      <div class="relative max-w-3xl mx-auto px-5 sm:px-8 text-center reveal">
+        <div
+          class="inline-flex items-center gap-2 bg-emerald-950/60 border border-emerald-800/50 rounded-full px-4 py-1.5 mb-8"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-slow"></span>
+          <span class="text-emerald-300 text-xs font-semibold tracking-widest uppercase"
+            >Limited spots — 14-day free trial</span
+          >
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-white mb-5 text-glow">
+          Your next late invoice<br />
+          <span class="text-emerald-400">shouldn't exist.</span>
+        </h2>
+
+        <p class="text-slate-400 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
+          Join 12,400 freelancers who spent their weekends doing something other than chasing money.
+          Start free, no card required, up and running in under 5 minutes.
+        </p>
+
+        <!-- Email + CTA -->
+        <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
+          <input
+            type="email"
+            placeholder="Enter your work email"
+            class="cta-input flex-1 bg-slate-900/80 border border-slate-700/60 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-slate-600 focus:border-emerald-500/60"
+          />
+          <button class="btn-primary px-7 py-3.5 text-sm whitespace-nowrap flex-shrink-0">
+            <span>Start free trial →</span>
+          </button>
+        </div>
+
+        <!-- Guarantee pills -->
+        <div class="flex flex-wrap gap-3 justify-center">
+          <div
+            class="flex items-center gap-2 bg-slate-900/60 border border-slate-800/60 rounded-full px-4 py-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#22d37e"
+              stroke-width="2"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span class="text-slate-400 text-xs font-medium">No credit card required</span>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-slate-900/60 border border-slate-800/60 rounded-full px-4 py-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#22d37e"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span class="text-slate-400 text-xs font-medium">2-minute setup</span>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-slate-900/60 border border-slate-800/60 rounded-full px-4 py-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#22d37e"
+              stroke-width="2"
+            >
+              <polyline points="3 6 5 12 8 8 12 14 15 10 18 16 21 10" />
+            </svg>
+            <span class="text-slate-400 text-xs font-medium">Cancel anytime</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+    <footer class="border-t border-slate-800/60 bg-slate-950/50 py-14">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+          <!-- Brand col -->
+          <div class="col-span-2 md:col-span-2">
+            <a href="#" class="flex items-center gap-2.5 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#011c0f"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M7 10h2l2 4 2-7 2 3h2" />
+                </svg>
+              </div>
+              <span class="text-white font-bold text-lg tracking-tight"
+                >Bill<span class="text-emerald-400">Buddy</span></span
+              >
+            </a>
+            <p class="text-slate-500 text-sm leading-relaxed max-w-[230px]">
+              Invoicing software that works while you sleep. Built for freelancers, solo devs, and
+              creative agencies.
+            </p>
+            <!-- Social icons -->
+            <div class="flex gap-3 mt-5">
+              <a
+                href="#"
+                class="w-8 h-8 rounded-lg bg-slate-800/80 border border-slate-700/40 flex items-center justify-center text-slate-500 hover:text-white hover:border-slate-600 transition-all duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-lg bg-slate-800/80 border border-slate-700/40 flex items-center justify-center text-slate-500 hover:text-white hover:border-slate-600 transition-all duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-lg bg-slate-800/80 border border-slate-700/40 flex items-center justify-center text-slate-500 hover:text-white hover:border-slate-600 transition-all duration-200"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <p class="text-white font-semibold text-sm mb-4">Product</p>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#features"
+                  class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#pricing" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Changelog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Roadmap</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Integrations</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >API docs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <p class="text-white font-semibold text-sm mb-4">Company</p>
+            <ul class="space-y-2.5">
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Press kit</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <p class="text-white font-semibold text-sm mb-4">Legal</p>
+            <ul class="space-y-2.5">
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Privacy policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Terms of service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Cookie policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >Security</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-slate-500 text-sm hover:text-white transition-colors"
+                  >GDPR</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="section-divider mb-6" />
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-slate-600 text-xs">© 2025 BillBuddy Inc. All rights reserved.</p>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1.5">
+              <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-slow"></div>
+              <span class="text-slate-600 text-xs">All systems operational</span>
+            </div>
+            <span class="text-slate-700">·</span>
+            <p class="text-slate-600 text-xs">SOC 2 Type II · GDPR · PCI DSS</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════ -->
+    <script>
+      /* ── Mobile menu ── */
+      const burger = document.getElementById("burger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      burger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      function closeMobile() {
+        mobileMenu.classList.add("hidden");
+      }
+
+      /* ── Nav scroll opacity ── */
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.style.borderBottomColor = "rgba(36, 48, 68, 0.7)";
+        } else {
+          navbar.style.borderBottomColor = "rgba(26, 34, 53, 0.5)";
+        }
+      });
+
+      /* ── Pricing toggle ── */
+      const prices = {
+        monthly: {
+          starter: "$0",
+          pro: "$29",
+          agency: "$79",
+          noteP: "Billed monthly",
+          noteA: "Billed monthly",
+        },
+        annual: {
+          starter: "$0",
+          pro: "$23",
+          agency: "$63",
+          noteP: "Billed $276/yr (save $72)",
+          noteA: "Billed $756/yr (save $192)",
+        },
+      };
+      function setPricing(plan) {
+        const p = prices[plan];
+        document.getElementById("price-starter").textContent = p.starter;
+        document.getElementById("price-pro").textContent = p.pro;
+        document.getElementById("price-agency").textContent = p.agency;
+        document.getElementById("billing-note-pro").textContent = p.noteP;
+        document.getElementById("billing-note-agency").textContent = p.noteA;
+
+        const monthly = document.getElementById("toggle-monthly");
+        const annual = document.getElementById("toggle-annual");
+        if (plan === "monthly") {
+          monthly.classList.add("bg-slate-800", "text-white");
+          monthly.classList.remove("text-slate-400");
+          annual.classList.remove("bg-slate-800", "text-white");
+          annual.classList.add("text-slate-400");
+        } else {
+          annual.classList.add("bg-slate-800", "text-white");
+          annual.classList.remove("text-slate-400");
+          monthly.classList.remove("bg-slate-800", "text-white");
+          monthly.classList.add("text-slate-400");
+        }
+      }
+
+      /* ── FAQ Accordion ── */
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const body = item.querySelector(".faq-body");
+        const isOpen = item.classList.contains("open");
+
+        // Close all
+        document.querySelectorAll(".faq-item.open").forEach((el) => {
+          el.classList.remove("open");
+          el.querySelector(".faq-body").classList.remove("open");
+          el.style.borderColor = "";
+        });
+
+        // Open clicked (if was closed)
+        if (!isOpen) {
+          item.classList.add("open");
+          body.classList.add("open");
+          item.style.borderColor = "rgba(34, 211, 126, 0.25)";
+        }
+      }
+
+      /* ── Scroll reveal ── */
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      );
+      revealEls.forEach((el) => observer.observe(el));
+
+      /* ── Smooth scroll for anchor links ── */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
