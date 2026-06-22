@@ -35,7 +35,7 @@ Full-stack developer building production-ready web applications — from polishe
 
 ---
 
-## 🚀 What I Build
+## 🚀 What I Built
 
 - **Full-stack web apps** with Next.js (SSR, SSG, API routes) + Fastify backends deployed to production
 - **Auth systems** with OTP flows, JWT, session handling, bcrypt, rate-limiting, and DDoS protection
