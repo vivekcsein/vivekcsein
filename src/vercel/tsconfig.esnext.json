@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    // ── Core ──────────────────────────────────────────────────
+    // ESNext = no downcompile, Bun runs it natively
+    // Preserve = let Bun/Next.js bundler own the module format
+    // bundler = no forced .js extensions on imports (bare imports just work)
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+
+    // ── Emit ──────────────────────────────────────────────────
+    // noEmit = TS only type-checks, Bun/Next.js handles transpile
+    // declaration = .d.ts output for monorepo/package consumers
+    "noEmit": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+
+    // ── Imports ───────────────────────────────────────────────
+    // verbatimModuleSyntax = enforces `import type` — zero runtime cost
+    // isolatedModules = each file transpilable alone (required by Bun/SWC)
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+
+    // ── Strict ────────────────────────────────────────────────
+    // strict = master switch for 8 sub-flags
+    // noUncheckedIndexedAccess = arr[0] → T | undefined (not T), catches real bugs
+    // useUnknownInCatchVariables = catch(e) → e is unknown, never any
+    // exactOptionalPropertyTypes = { x?: string } ≠ { x: string | undefined }
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "useUnknownInCatchVariables": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+
+    // ── Off (ESLint owns these) ────────────────────────────────
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false,
+
+    // ── Paths ─────────────────────────────────────────────────
+    "rootDir": "./",
+    "types": ["node", "bun-types"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@packages/*": ["./src/packages/*"],
+      "@types/*": ["./src/types/*"]
+    }
+  },
+
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "index.ts"],
+  "exclude": ["node_modules", "dist", ".next", "coverage"]
+}
